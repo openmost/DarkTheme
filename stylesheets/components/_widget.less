@@ -1,0 +1,56 @@
+.widget {
+  background-color: transparent;
+  box-shadow: none;
+  border: none !important;
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  .widgetTop {
+    border: none;
+    background-color: transparent;
+    padding: 0 !important;
+
+    .buttons {
+      background: @theme-color-background-base;
+      top: 4px;
+      right: 0;
+      padding-left: 0;
+
+      .button {
+        margin-top: 0px;
+
+        &:first-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .widgetName {
+      padding: 0 0 15px 0 !important;
+      font-weight: 300;
+      color: #ffffff;
+    }
+  }
+
+  .widgetContent {
+    background-color: #2b3138;
+    color: #ffffff !important;
+    /*border-radius: 2px;
+    border: none;
+    padding: 14px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);*/
+
+    padding-top: 15px;
+    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .dataTable, .card {
+      margin-top: -15px;
+      border: none !important;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+    "name": "DarkTheme",
+    "description": "A modern dark theme for Matomo",
+    "version": "1.0.0",
+    "theme": true,
+    "require": {
+        "piwik": ">=3.13.1-stable,<4.0.0-b1"
+    },
+    "stylesheet": "stylesheets\/theme.less",
+    "javascript": "javascripts\/theme.js",
+    "homepage": "https://lazuli.agency",
+    "license": "GPL v3+",
+    "keywords": [
+        "Dark Theme", "Dark", "Modern", "Black"
+    ],
+    "support": {
+        "email": "contact@ronan-hello.fr",
+        "issues": "https://lazuli.agency",
+        "source": "https://lazuli.agency"
+    },
+    "authors": [
+        {
+            "name": "Ronan HELLO",
+            "email": "contact@ronan-hello.fr",
+            "homepage": "https://ronan-hello.fr"
+        }
+    ],
+    "donate": {
+        "paypal": "ronan56.hello@gmail.com"
+    }
+}

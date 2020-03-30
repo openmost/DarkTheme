@@ -1,0 +1,30 @@
+table.dataTable {
+  background-color: var(--dark);
+  color: #ffffff;
+  border: none !important;
+
+  tr, tr:not(.subDataTableContainer) {
+
+    th {
+      color: var(--light-transparent) !important;
+    }
+
+    td, td.column {
+      background: var(--dark) !important;
+      border-color: var(--darker) !important;
+      color: var(--light);
+
+      .value {
+        color: var(--light);
+      }
+    }
+  }
+}
+
+.tableIcon.activeIcon {
+  background-color: var(--dark) !important;
+}
+
+.dataTableFooterIcons .inactiveIcon:hover {
+  background-color: var(--dark) !important;
+}
