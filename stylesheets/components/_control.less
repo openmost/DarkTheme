@@ -9,6 +9,10 @@
   color: var(--light-transparent) !important;
   min-width: 18px;
 
+  &.expanded {
+    background-color: var(--darker) !important;
+  }
+
   .title {
     color: var(--light-transparent) !important;
   }
@@ -21,5 +25,29 @@
     .title {
       color: var(--light) !important;
     }
+  }
+}
+
+.siteSelector {
+  .custom_select_ul_list li a {
+    color: var(--light) !important;
+    transition: .2s ease color;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+      background-color: transparent !important;
+      transition: .2s ease color;
+    }
+  }
+}
+
+.custom_select_all a {
+  color: var(--light) !important;
+  transition: .2s ease color;
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+    background-color: transparent !important;
+    transition: .2s ease color;
   }
 }

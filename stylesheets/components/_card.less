@@ -1,26 +1,27 @@
 .card {
-  box-shadow: none;
-  border: 1px solid var(--dark);
-  border-radius: 8px;
-  background-color: var(--dark);
+  background-color: var(--dark) !important;
 
+  .h1, .h2, .h3, .h4,
+  h1, h2, h3, h4,
+  p,
+  .rss-description,
+  .card-title,
   .card-content {
-    color: var(--light);
-    background-color: var(--dark);
-    padding: 5px 20px 20px 20px !important;
+    color: var(--light) !important;
+  }
 
-    .card-title, .title {
-      color: var(--light) !important;
+  .card-title a {
+    color: var(--light) !important;
+  }
+
+  .tableIcon.activeIcon {
+    background: var(--dark) !important;
+  }
+
+  tr, tr:hover {
+    button.table-action {
+      background: var(--dark) !important;
     }
   }
 
-  .card-table {
-    margin: 0 -20px !important;
-    border: 0;
-  }
-
-  .enrichedHeadline .title, .card-title {
-    position: relative;
-    font-weight: 300 !important;
-  }
 }

@@ -5,3 +5,19 @@
 #header_message .dropdown {
   border-color: var(--darker);
 }
+
+.dropdown-content {
+  background-color: var(--darker) !important;
+
+  li {
+    color: var(--light) !important;
+
+    &:hover, &.selected {
+      background-color: var(--dark) !important;
+    }
+
+    &.optgroup {
+      border-top-color: var(--darker) !important;
+    }
+  }
+}

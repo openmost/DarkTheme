@@ -1,30 +1,54 @@
-table.dataTable {
+table {
   background-color: var(--dark);
-  color: #ffffff;
-  border: none !important;
 
-  tr, tr:not(.subDataTableContainer) {
+  &.entityTable,
+  &.dataTable {
 
-    th {
-      color: var(--light-transparent) !important;
+    img {
+     // filter: invert(1);
     }
 
-    td, td.column {
-      background: var(--dark) !important;
-      border-color: var(--darker) !important;
-      color: var(--light);
+    thead {
+      tr, tr:not(.subDataTableContainer) {
+        th {
+          color: rgba(255, 255, 255, 0.7) !important;
+        }
+      }
+    }
 
-      .value {
-        color: var(--light);
+    tbody {
+      tr, tr:not(.subDataTableContainer) {
+        td {
+          border-bottom-color: var(--darker) !important;
+        }
       }
     }
   }
+
+  tr, tr {
+
+    th {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    td {
+      color: var(--light) !important;
+      background-color: var(--dark) !important;
+      border-bottom-color: var(--darker) !important;
+    }
+  }
+
 }
 
-.tableIcon.activeIcon {
-  background-color: var(--dark) !important;
+.dataTablePages {
+  color: var(--light);
 }
 
-.dataTableFooterIcons .inactiveIcon:hover {
-  background-color: var(--dark) !important;
+.datatableRelatedReports span {
+  color: var(--light) !important;
+}
+
+#widgetUserCountrygetCity .dataTable .label > img,
+#widgetUserCountrygetCountry .dataTable .label > img {
+  border: 1px solid var(--darker) !important;
 }

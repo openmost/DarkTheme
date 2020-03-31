@@ -1,51 +1,23 @@
 .widget {
-  background-color: transparent;
-  box-shadow: none;
-  border: none !important;
+  border-color: var(--dark) !important;
+  background: var(--dark) !important;
+  color: var(--light);
 
-  &:hover {
-    box-shadow: none;
-  }
+  .card,
+  .promoWidget {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
 
-  .widgetTop {
-    border: none;
-    background-color: transparent;
-    padding: 0 !important;
-
-    .buttons {
-      background: @theme-color-background-base;
-      top: 4px;
-      right: 0;
-      padding-left: 0;
-
-      .button {
-        margin-top: 0px;
-
-        &:first-child {
-          margin-right: 0;
-        }
-      }
-    }
-
-    .widgetName {
-      padding: 0 0 15px 0 !important;
-      font-weight: 300;
-      color: #ffffff;
+    p, .card-content {
+      color: var(--light) !important;
     }
   }
 
-  .widgetContent {
-    background-color: #2b3138;
-    color: #ffffff !important;
-    border: 1px solid var(--dark);
-    padding-top: 15px;
-    box-shadow: none;
-    border-radius: 8px;
-    overflow: hidden;
+  p, .rss-description {
+    color: var(--light) !important;
+  }
 
-    .dataTable, .card {
-      margin-top: -15px;
-      border: none !important;
-    }
+  #piwik-promo-share {
+    background: var(--darker) !important;
   }
 }
