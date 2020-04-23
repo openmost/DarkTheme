@@ -1,7 +1,7 @@
 {
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "theme": true,
     "require": {
         "piwik": ">=3.13.1-stable,<4.0.0-b1"
@@ -15,8 +15,8 @@
     ],
     "support": {
         "email": "contact@ronan-hello.fr",
-        "issues": "https://lazuli.agency",
-        "source": "https://lazuli.agency"
+        "issues": "https://github.com/ronan-hello/matomo-dark-theme/issues",
+        "source": "https://github.com/ronan-hello/matomo-dark-theme"
     },
     "authors": [
         {
