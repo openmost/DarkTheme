@@ -1,3 +1,8 @@
+## v1.0.0
+- Refactoring calendar
+- Revert icon colors
+- Many patches
+
 ## v0.1.5
 - Updating dropdowns
 - Updating segment selector

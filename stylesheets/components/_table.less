@@ -4,8 +4,12 @@ table {
   &.entityTable,
   &.dataTable {
 
+    .dataTableRowActions {
+      background-color: transparent !important;
+    }
+
     img {
-     // filter: invert(1);
+      // filter: invert(1);
     }
 
     thead {
@@ -46,6 +50,14 @@ table {
 
 .datatableRelatedReports span {
   color: var(--light) !important;
+}
+
+.dataTableFooterIcons .inactiveIcon:hover {
+  background-color: var(--dark) !important;
+
+  img {
+    filter: invert(1);
+  }
 }
 
 #widgetUserCountrygetCity .dataTable .label > img,

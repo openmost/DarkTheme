@@ -1,0 +1,55 @@
+.ui-datepicker {
+  border-color: var(--darker) !important;
+
+  .ui-datepicker-header {
+    background: var(--darker) !important;
+    border-color: var(--darker);
+  }
+
+  .ui-datepicker-calendar {
+    border-color: var(--darker);
+
+    thead {
+      border-color: var(--darker);
+
+      th {
+        background-color: var(--darker) !important;
+        border-color: var(--darker);
+      }
+    }
+
+    tbody {
+
+      tr {
+
+        td {
+
+          a.ui-state-default {
+            color: var(--light-transparent) !important;
+          }
+
+          &:not(.ui-datepicker-week-end):not(.ui-datepicker-current-period):not(.ui-state-disabled) a {
+            background: var(--darker) !important;
+          }
+
+          &.ui-state-disabled {
+            background-color: var(--dark) !important;
+          }
+
+          &.ui-datepicker-week-end a {
+            background-color: var(--darker) !important;
+          }
+
+          &.ui-datepicker-current-period a {
+            background-color: #263258 !important;
+            color: var(--light) !important;
+          }
+
+          &.ui-state-hover, &:not(.ui-state-disabled) a.ui-state-default.ui-state-hover {
+            background: var(--primary) !important;
+          }
+        }
+      }
+    }
+  }
+}
