@@ -1,0 +1,35 @@
+.expandableSelector {
+
+  .expandableList {
+    background-color: var(--dark);
+
+    .searchContainer {
+      border-color: var(--darker);
+      background: var(--dark);
+
+      .expandableSearch {
+        background-color: var(--darker) !important;
+        color: var(--light-transparent) !important;
+        border: 1px solid var(--darker) !important;
+      }
+    }
+
+    .collection {
+      background-color: var(--dark);
+      border-color: var(--darker);
+
+      .collection-item {
+        background-color: var(--dark);
+        border-bottom-color: var(--darker);
+
+        &:hover {
+          background-color: var(--darker) !important;
+        }
+
+        h4 {
+          color: var(--light-transparent);
+        }
+      }
+    }
+  }
+}

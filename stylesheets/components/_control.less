@@ -19,7 +19,7 @@
 
   &:hover {
     transition: .2s ease all;
-    background: var(--dark) !important;
+    background: var(--dark);
     color: var(--light) !important;
 
     .title {
@@ -35,7 +35,7 @@
 
     &:hover {
       color: rgba(255, 255, 255, 0.7) !important;
-      background-color: transparent !important;
+      background-color: var(--darker) !important;
       transition: .2s ease color;
     }
   }
@@ -50,4 +50,8 @@
     background-color: transparent !important;
     transition: .2s ease color;
   }
+}
+
+#root piwik-paged-users-list .siteSelector.borderedControl {
+  background-color: var(--dark);
 }

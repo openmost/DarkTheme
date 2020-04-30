@@ -1,3 +1,8 @@
+## v0.1.5
+- Updating dropdowns
+- Updating segment selector
+- Updating widget selector
+
 ## v0.1.4
 - Updating GitHub default repo
 - Major update incoming 

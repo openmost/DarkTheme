@@ -1,23 +1,83 @@
 .segmentEditorPanel {
-
   .segmentListContainer {
-
-    .segmentationContainer .submenu li {
-      color: var(--light) !important;
-
-      ul li {
-        &:hover {
-          background-color: var(--darker) !important;
+    .segmentationContainer {
+      .submenu {
+        li {
+          color: var(--light-transparent);
         }
       }
     }
   }
 }
 
-.segment-generator {
+.segment-element {
+  background-color: var(--darker) !important;
 
-  .segment-row, .segment-or, .segment-and, .segment-add-or, .segment-add-row {
-    color: var(--light) !important;
-    background: var(--darker) !important;
+  .segment-top {
+    color: var(--light);
+
+    a.dropdown {
+      color: var(--light-transparent) !important;
+    }
+  }
+
+  .segment-content {
+    .segment-generator {
+
+      .segment-rows {
+        border-color: #2e2e2e;
+
+        .segment-row,
+        .segment-add-or > div {
+          background-color: var(--dark);
+          border-color: var(--dark);
+          color: var(--light-transparent);
+          text-shadow: none;
+
+          .segment-input {
+            border-color: var(--dark);
+          }
+        }
+
+        .segment-or {
+          color: var(--light-transparent);
+          background: var(--dark);
+          text-shadow: none;
+
+          &:before, &:after {
+            border-color: var(--dark);
+          }
+        }
+
+        .segment-add-or {
+          background: var(--dark);
+        }
+      }
+
+      .segment-and {
+        color: var(--light-transparent);
+        background: var(--darker);
+        text-shadow: none;
+
+        &:before, &:after {
+          border-color: #2e2e2e;
+          background: transparent;
+        }
+      }
+
+      .segment-add-row {
+        background-color: var(--dark);
+        border-color: #2e2e2e;
+
+        & > div {
+          border-color: var(--dark);
+        }
+      }
+    }
+  }
+
+  .segment-footer {
+    border-color: var(--dark);
+    background: var(--dark);
   }
 }
