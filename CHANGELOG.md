@@ -1,3 +1,11 @@
+# Changelog
+
+## v1.1.0
+- Support for Matomo 4.x
+- Fix sidenav CSS
+- Fix chip CSS
+- Fix collection CSS (Tag Manager)
+
 ## v1.0.0
 - Refactoring calendar
 - Revert icon colors

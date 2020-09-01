@@ -1,6 +1,10 @@
 table {
   background-color: var(--dark);
 
+  &.subDataTable thead th {
+    border-top: 1px solid #202329 !important;
+  }
+
   &.entityTable,
   &.dataTable {
 
@@ -63,4 +67,12 @@ table {
 #widgetUserCountrygetCity .dataTable .label > img,
 #widgetUserCountrygetCountry .dataTable .label > img {
   border: 1px solid var(--darker) !important;
+}
+
+.tableConfiguration div.configItem {
+  color: var(--light-transparent) !important;
+}
+
+.dataTableSearchInput, .dataTableSearchInput:focus {
+  color: #ffffff !important;
 }
