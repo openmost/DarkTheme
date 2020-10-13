@@ -1,7 +1,7 @@
 {
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "theme": true,
     "require": {
         "piwik": ">=3.13.1-stable,<4.0.0-b1"
