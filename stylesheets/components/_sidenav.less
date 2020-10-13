@@ -1,0 +1,18 @@
+.sidenav {
+  background-color: var(--darker);
+
+  li {
+
+    & > a {
+      color: var(--light);
+
+      i {
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+.sidenav .collapsible-body, .sidenav.fixed .collapsible-body {
+  background-color: var(--dark);
+}
