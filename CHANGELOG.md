@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.3
+- Fix device icon in real time visitor log
+- Fix date selector in "period" mode
+- Fix background color for collapsing navbar
+
 ## v1.1.0
 - Support for Matomo 4.x
 - Fix sidenav CSS
