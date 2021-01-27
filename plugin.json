@@ -1,7 +1,7 @@
 {
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "theme": true,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"

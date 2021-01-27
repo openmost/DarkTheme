@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.4
+- Fix device icon in all pages
+- Fix Apple icon
+- Fix IOS icon
+
 ## v1.1.3
 - Fix device icon in real time visitor log
 - Fix date selector in "period" mode
