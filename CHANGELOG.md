@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.6
+- Fix user profile icon contrast
+
 ## v1.1.5
 - Fix username text color in "Realtime Visitor"
 
