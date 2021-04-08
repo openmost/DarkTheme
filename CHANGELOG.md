@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.5
+- Fix username text color in "Realtime Visitor"
+
 ## v1.1.4
 - Fix device icon in all pages
 - Fix Apple icon
