@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.1.7
+- Fix dropdown in user permissions and capabilities
+- Fix form input while disabled
+- Fix demo page cards
+
 ## v1.1.6
 - Fix user profile icon contrast
 
