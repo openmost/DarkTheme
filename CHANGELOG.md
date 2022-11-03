@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.0
+- Fix TagManager debug input background color
+- Remove bold font-weight on navbar controls
+- Fix jqplot canvas popover inverted color
+- Fix segment comparator icon view
+- Fix TagManager version description textarea background color
+- Change notification background color
+- Set theme variables in PHP DarkTheme.php file
+
 ## v1.1.7
 - Fix dropdown in user permissions and capabilities
 - Fix form input while disabled
