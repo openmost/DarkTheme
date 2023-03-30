@@ -22,7 +22,7 @@ class DarkTheme extends Plugin
 
     public function configureThemeVariables(Plugin\ThemeStyles $vars)
     {
-        $primary = '#3450a3';
+        $primary = '#778fd4';
 
         $vars->colorBrand = $primary;
         $vars->colorBrandContrast = '#ffffff';

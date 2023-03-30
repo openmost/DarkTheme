@@ -6,16 +6,25 @@
 
   path {
     fill: var(--darker) !important;
-    stroke: #ffffff;
+    stroke: var(--light-transparent);
   }
 }
 
-.UserCountryMap_map svg .context {
-  fill: var(--dark) !important;
+.UserCountryMap_map svg .context:is([fill="none"]),
+.UserCountryMap_map svg .countries:is([fill="none"]),
+.UserCountryMap_map svg .regions:is([fill="none"]),
+.UserCountryMap_map svg .context-clickable:is([fill="none"])
+{
+  fill: var(--darker) !important;
 }
 
-.UserCountryMap_map svg .regionBG {
-  stroke: var(--dark) !important;
+.UserCountryMap_map svg .regionBG,
+.UserCountryMap_map svg .countryBG {
+  stroke: var(--primary) !important;
+}
+
+.UserCountryMap_map svg .countries {
+  stroke: var(--primary) !important;
 }
 
 .UserCountryMap-legend {
