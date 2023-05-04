@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.2
+- Fix profile name color
+
 ## v1.2.0
 - Fix TagManager debug input background color
 - Remove bold font-weight on navbar controls
