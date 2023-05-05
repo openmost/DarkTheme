@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.0
+- Compatibility to Matomo 5.x
+- Start using semver for versioning
+
 ## v1.2.2
 - Fix profile name color
 
