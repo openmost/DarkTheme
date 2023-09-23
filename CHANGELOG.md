@@ -1,5 +1,8 @@
 # Changelog
 
+## v5.0.2
+- Set theme logo
+
 ## v5.0.0
 - Compatibility to Matomo 5.x
 - Start using semver for versioning
