@@ -1,31 +1,28 @@
 {
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "theme": true,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
     },
     "stylesheet": "stylesheets\/theme.less",
     "javascript": "javascripts\/theme.js",
-    "homepage": "https://lazuli.agency",
+    "homepage": "https://openmost.io",
     "license": "GPL v3+",
     "keywords": [
         "Dark Theme", "Dark", "Modern", "Black"
     ],
     "support": {
-        "email": "contact@ronan-hello.fr",
-        "issues": "https://github.com/ronan-hello/matomo-dark-theme/issues",
-        "source": "https://github.com/ronan-hello/matomo-dark-theme"
+        "email": "ronan@openmost.io",
+        "issues": "https://github.com/openmost/DarkTheme/issues",
+        "source": "https://github.com/openmost/DarkTheme"
     },
     "authors": [
         {
-            "name": "Ronan HELLO",
-            "email": "contact@ronan-hello.fr",
-            "homepage": "https://ronan-hello.fr"
+            "name": "Openmost",
+            "email": "ronan@openmost.io",
+            "homepage": "https://openmost.io"
         }
-    ],
-    "donate": {
-        "paypal": "ronan56.hello@gmail.com"
-    }
+    ]
 }
