@@ -1,5 +1,8 @@
 # Changelog
 
+## v5.0.4
+- Update Calendar, TagManager chip and CustomReport dimension selector
+
 ## v5.0.2
 - Set theme logo
 
