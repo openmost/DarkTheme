@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.7
+- Fix CustomReport dimension selector color
+
 ## v1.2.2
 - Fix profile name color
 
