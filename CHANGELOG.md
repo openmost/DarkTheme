@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.2.8
+- Fix Forgot password message box
+
 ## v1.2.7
 - Fix CustomReport dimension selector color
 
