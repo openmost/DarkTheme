@@ -1,5 +1,8 @@
 # Changelog
 
+## v5.0.5
+- Fix forgot password message box
+
 ## v5.0.4
 - Update Calendar, TagManager chip and CustomReport dimension selector
 
