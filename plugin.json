@@ -1,14 +1,14 @@
 {
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "theme": true,
     "require": {
         "matomo": ">=4.0.0-b1,<5.0.0-b1"
     },
     "stylesheet": "stylesheets\/theme.less",
     "javascript": "javascripts\/theme.js",
-    "homepage": "https://openmost.io",
+    "homepage": "https://openmost.io/products/matomo-dark-theme/",
     "license": "GPL v3+",
     "keywords": [
         "Dark Theme", "Dark", "Modern", "Black"

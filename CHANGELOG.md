@@ -1,6 +1,9 @@
 # Changelog
 
 ## v1.2.8
+- Update documentation URL
+
+## v1.2.8
 - Fix Forgot password message box
 
 ## v1.2.7
