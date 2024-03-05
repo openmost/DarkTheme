@@ -2,13 +2,13 @@
     "name": "DarkTheme",
     "description": "A modern dark theme for Matomo",
     "theme": true,
-    "version": "5.0.5",
+    "version": "5.0.6",
     "require": {
         "matomo": ">=5.0.0-b1,<6.0.0-b1"
     },
     "stylesheet": "stylesheets\/theme.less",
     "javascript": "javascripts\/theme.js",
-    "homepage": "https://lazuli.agency",
+    "homepage": "https://openmost.io/products/matomo-dark-theme/",
     "license": "GPL v3+",
     "keywords": [
         "Dark Theme", "Dark", "Modern", "Black"
