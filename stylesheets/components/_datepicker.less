@@ -1,4 +1,4 @@
-.ui-datepicker {
+#root .ui-datepicker {
   border: 1px solid var(--dark) !important;
 
   .ui-datepicker-header {
@@ -25,6 +25,19 @@
       tr {
 
         td {
+
+          &.ui-datepicker-other-month,
+          &.ui-datepicker-unselectable,
+          &.ui-state-disabled {
+
+            &.ui-state-hover {
+              background-color: var(--dark) !important;
+            }
+          }
+
+          &.ui-datepicker-current-period a {
+            background-color: var(--darker) !important;
+          }
 
           .ui-state-default {
             color: var(--light-transparent) !important;

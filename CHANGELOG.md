@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.10
+
+- 
+
 ## v5.0.9
 
 - update: Support AI Chats plugin (ChatGPT and MistralAI)

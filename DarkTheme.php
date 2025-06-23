@@ -26,7 +26,7 @@ class DarkTheme extends Plugin
 
         $vars->colorBrand = $primary;
         $vars->colorBrandContrast = '#ffffff';
-        $vars->colorText = '#f7f7f7';
+        $vars->colorText = '#212121'; //'#f7f7f7'; // Email text content
         $vars->colorTextLight = '#444';
         $vars->colorTextLighter = '#666666';
         $vars->colorTextContrast = '#37474f';
