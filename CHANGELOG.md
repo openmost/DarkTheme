@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.14
+
+- fix: comparison title color
+
 ## v5.0.13
 
 - update: Funnels plugin support
