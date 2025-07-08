@@ -1,8 +1,12 @@
 # Changelog
 
+## v5.0.11
+
+- fix: color text and profile icon
+
 ## v5.0.10
 
-- 
+- fix: Email text color and calendar active days
 
 ## v5.0.9
 
