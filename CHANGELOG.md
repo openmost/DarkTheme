@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.0.13
+
+- update: Funnels plugin support
+
 ## v5.0.12
 
 - fix: visitor log exand text color
