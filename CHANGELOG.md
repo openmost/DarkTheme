@@ -1,8 +1,12 @@
 # Changelog
 
+## v5.0.12
+
+- fix: visitor log exand text color
+
 ## v5.0.11
 
-- fix: color text and profile icon
+- fix: profile icon
 
 ## v5.0.10
 
