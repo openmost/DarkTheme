@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.1.0
+
+- fix: Dropdown search items color
+- update: Users invitation page
+
 ## v5.0.14
 
 - fix: comparison title color
