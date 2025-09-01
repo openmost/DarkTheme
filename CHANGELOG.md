@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.1.1
+
+- matomo error: re-submit theme changes
+
 ## v5.1.0
 
 - fix: Dropdown search items color
