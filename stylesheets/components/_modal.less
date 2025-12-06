@@ -1,11 +1,76 @@
 .modal {
-  background-color: var(--darker);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-lg);
 
+  .modal-content {
+    background: none !important;
+    color: var(--text-primary);
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    h4, h5, h6 {
+      color: var(--text-primary);
+    }
+  }
+
+  // Header same as body
+  .modal-header {
+    background-color: var(--surface-raised) !important;
+    border-bottom: 1px solid var(--border-medium);
+  }
+
+  // Footer same as body
   .modal-footer {
-    background-color: var(--darker);
+    background-color: var(--surface-raised) !important;
+    border-top: 1px solid var(--border-medium);
+  }
+
+  .modal-close {
+    color: var(--text-secondary);
+
+    &:hover {
+      color: var(--text-primary);
+      background-color: var(--hover-overlay);
+    }
+  }
+
+  // Modal title
+  h4, .modal-title {
+    background-color: var(--surface-raised) !important;
+    color: var(--text-primary) !important;
   }
 }
 
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
 .ui-confirm {
-  color: var(--light-transparent) !important;
+  color: var(--text-secondary) !important;
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-light);
+
+  h2 {
+    color: var(--text-primary) !important;
+    background-color: var(--surface-raised) !important;
+    border-bottom: 1px solid var(--border-medium);
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+
+  .btn {
+    border: 1px solid var(--border-light);
+  }
+}
+
+// Dialog title bars
+.ui-dialog .ui-dialog-titlebar,
+.ui-dialog .ui-widget-header {
+  background-color: var(--surface-raised) !important;
+  border-bottom: 1px solid var(--border-medium) !important;
 }

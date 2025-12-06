@@ -1,24 +1,53 @@
 .ui-dialog {
-  background: var(--dark) !important;
-  color: var(--light) !important;
+  background: var(--surface-raised) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-lg) !important;
 
+  // Header same as body
   .ui-widget-header {
-    color: var(--light) !important;
+    background: var(--surface-raised) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid var(--border-medium) !important;
 
     .ui-dialog-title {
-      color: var(--light) !important;
+      color: var(--text-primary) !important;
     }
+
+    .ui-dialog-titlebar-close {
+      color: var(--text-secondary);
+
+      &:hover {
+        color: var(--text-primary);
+        background-color: var(--hover-overlay);
+      }
+    }
+  }
+
+  .ui-dialog-titlebar {
+    background: var(--surface-raised) !important;
   }
 
   .ui-widget-content {
-    color: var(--light) !important;
+    color: var(--text-secondary) !important;
+    background: var(--surface-raised) !important;
 
     a {
-      color: var(--light) !important;
+      color: var(--primary-lighter) !important;
+
+      &:hover {
+        color: var(--light) !important;
+      }
     }
   }
 
+  // Footer same as body
+  .ui-dialog-buttonpane {
+    background: var(--surface-raised) !important;
+    border-top: 1px solid var(--border-medium) !important;
+  }
+
   .rowevolution table.metrics td.text span.details {
-    color: var(--light);
+    color: var(--text-secondary);
   }
 }

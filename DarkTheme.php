@@ -22,39 +22,54 @@ class DarkTheme extends Plugin
 
     public function configureThemeVariables(Plugin\ThemeStyles $vars)
     {
-        $primary = '#778fd4';
+        // Primary colors
+        $primary = '#4a6fc7';
+        $primaryLight = '#6b8fd9';
+        $primaryDark = '#3450a3';
+
+        // Dark scale
+        $darkest = '#181a1f';
+        $darker = '#202329';
+        $dark = '#2b3138';
+        $darkElevated = '#3a424d';
+
+        // Light scale
+        $light = '#ffffff';
+        $lightMuted = 'rgba(255, 255, 255, 0.85)';
+        $lightTransparent = 'rgba(255, 255, 255, 0.7)';
+        $lightSubtle = 'rgba(255, 255, 255, 0.5)';
 
         $vars->colorBrand = $primary;
-        $vars->colorBrandContrast = '#ffffff';
-        $vars->colorText = '#212121'; //'#f7f7f7'; // Email text content
-        $vars->colorTextLight = '#444';
-        $vars->colorTextLighter = '#666666';
-        $vars->colorTextContrast = '#37474f';
-        $vars->colorLink = $primary;
+        $vars->colorBrandContrast = $light;
+        $vars->colorText = '#212121'; // Email text color (dark for white email backgrounds)
+        $vars->colorTextLight = '#444444'; // Email secondary text
+        $vars->colorTextLighter = '#666666'; // Email tertiary text
+        $vars->colorTextContrast = $light;
+        $vars->colorLink = $primaryLight;
         $vars->colorBaseSeries = '#ee3024';
-        $vars->colorHeadlineAlternative = '#4E4E4E';
-        $vars->colorHeaderBackground = '#2b3138';
-        $vars->colorHeaderText = '#ffffff';
+        $vars->colorHeadlineAlternative = $lightTransparent;
+        $vars->colorHeaderBackground = $dark;
+        $vars->colorHeaderText = $light;
 
-        $vars->colorMenuContrastText = '#f1f1f1';
-        $vars->colorMenuContrastTextSelected = $primary;
-        $vars->colorMenuContrastTextActive = '#fff';
+        $vars->colorMenuContrastText = $lightTransparent;
+        $vars->colorMenuContrastTextSelected = $primaryLight;
+        $vars->colorMenuContrastTextActive = $light;
         $vars->colorMenuContrastBackground = 'transparent';
 
-        $vars->colorWidgetBorder = '#2b3138';
-        $vars->colorWidgetBackground = '#2b3138';
-        $vars->colorWidgetExportedBackgroundBase = '#2b3138';
-        $vars->colorWidgetTitleBackground = '#2b3138';
-        $vars->colorWidgetTitleText = '#fff';
+        $vars->colorWidgetBorder = $darkElevated;
+        $vars->colorWidgetBackground = $dark;
+        $vars->colorWidgetExportedBackgroundBase = $dark;
+        $vars->colorWidgetTitleBackground = $dark; // Same as widget body
+        $vars->colorWidgetTitleText = $light;
 
-        $vars->colorBackgroundBase = '#202329';
-        $vars->colorBackgroundTinyContrast = '#f2f2f2';
-        $vars->colorBackgroundLowContrast = '#d9d9d9';
-        $vars->colorBackgroundContrast = '#2b3138';
-        $vars->colorBackgroundHighContrast = '#202020';
+        $vars->colorBackgroundBase = $darker;
+        $vars->colorBackgroundTinyContrast = $darkElevated;
+        $vars->colorBackgroundLowContrast = $dark;
+        $vars->colorBackgroundContrast = $dark;
+        $vars->colorBackgroundHighContrast = $darkest;
 
-        $vars->colorBorder = '#cccccc';
-        $vars->colorCode = '#f3f3f3';
-        $vars->colorCodeBackground = '#4d4d4d';
+        $vars->colorBorder = $darkElevated;
+        $vars->colorCode = $lightMuted;
+        $vars->colorCodeBackground = $darkElevated;
     }
 }

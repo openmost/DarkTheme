@@ -1,5 +1,36 @@
 # Changelog
 
+## v5.2.0
+
+### Major Improvements
+- **Complete CSS Variable System**: Expanded color palette with light scale, primary scale, dark scale, borders, surfaces, text, and status colors
+- **Chart Theming**: Full jqPlot chart support using Matomo color namespaces (sparklines, bar graphs, pie charts, evolution graphs)
+- **Map Theming**: RealTimeMap and UserCountryMap with proper dark backgrounds and blue choropleth color scales
+- **Consistent UI**: Unified backgrounds across sidebar, cards, widgets, and modals
+
+### Features
+- Added comprehensive color variables for easy customization
+- Implemented Matomo theming documentation standards for charts and maps
+- Added choropleth range colors for data visualization on maps
+- Added special metrics color scale for visitor maps
+- Improved modal header/body background consistency
+- Widget title now matches widget body background
+
+### Fixes
+- Fixed chart canvas backgrounds to match card backgrounds
+- Fixed map country boundaries visibility on active countries
+- Fixed search input text visibility (white text on dark background)
+- Fixed action list timeline colors (darker than card background)
+- Fixed alert and notification border colors for better contrast
+- Fixed dropdown menu styling consistency
+- Fixed visitor log timeline styling
+
+### Styling
+- Grid lines in charts now subtle gray instead of harsh black/white
+- Improved hover states across interactive elements
+- Better shadow definitions for depth perception
+- Refined border colors for visual hierarchy
+
 ## v5.1.1
 
 - matomo error: re-submit theme changes

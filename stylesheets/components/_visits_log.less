@@ -1,7 +1,11 @@
 .dataTableVizVisitorLog {
   .dataTableWrapper {
-    color: var(--light-transparent) !important;
+    color: var(--text-secondary) !important;
   }
+}
+
+ol.actionList > li:not(.pageviewActions)::before {
+  box-shadow: 0 0 0 7px var(--darker) !important;
 }
 
 ol.actionList > li:not(.pageviewActions):after {
@@ -20,6 +24,51 @@ img.action-list-action-icon.action {
 
   .show-more-actions,
   .show-less-actions {
-    color: var(--light-transparent) !important;
+    color: var(--text-secondary) !important;
+  }
+}
+
+// Action list timeline - darker than card background
+.actionList,
+ol.actionList {
+
+  li.action {
+    // Timeline line before (top)
+    &::before {
+      background-color: var(--darker) !important;
+      border-color: var(--darker) !important;
+    }
+
+    // Timeline line after (bottom)
+    &::after {
+      background-color: var(--darker) !important;
+      border-color: var(--darker) !important;
+    }
+  }
+
+  // Timeline connector lines
+  > li::before,
+  > li::after {
+    background-color: var(--darker) !important;
+    border-color: var(--darker) !important;
+  }
+
+  > li:not(.pageviewActions)::after {
+    background-color: var(--darker) !important;
+  }
+}
+
+// Action icons on timeline
+.action-list-action-icon {
+  background-color: var(--darker) !important;
+  border-color: var(--dark-elevated) !important;
+}
+
+// Timeline vertical line
+.visitorLogIcons,
+.visitorLogIconsForGroup {
+  &::before,
+  &::after {
+    background-color: var(--darker) !important;
   }
 }

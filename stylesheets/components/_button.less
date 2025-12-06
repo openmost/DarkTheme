@@ -1,3 +1,60 @@
 .btn-flat {
-  color: var(--light-transparent) !important;
+  color: var(--text-secondary) !important;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: var(--text-primary) !important;
+    background-color: var(--hover-overlay) !important;
+  }
+
+  &:active {
+    background-color: var(--active-overlay) !important;
+  }
+}
+
+.btn {
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  transition: all 0.15s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  &.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary-light) !important;
+
+    &:hover {
+      background-color: var(--primary-light) !important;
+    }
+  }
+
+  &.btn-danger, &.btn-warning-red {
+    background-color: var(--danger-bg) !important;
+    border-color: var(--danger-border) !important;
+    color: var(--text-primary) !important;
+
+    &:hover {
+      background-color: var(--danger-border) !important;
+    }
+  }
+
+  &.btn-success {
+    background-color: var(--success-bg) !important;
+    border-color: var(--success-border) !important;
+    color: var(--text-primary) !important;
+
+    &:hover {
+      background-color: var(--success-border) !important;
+    }
+  }
+}
+
+.btn-link {
+  color: var(--primary-light) !important;
+
+  &:hover {
+    color: var(--primary-lighter) !important;
+  }
 }

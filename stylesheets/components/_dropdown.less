@@ -1,58 +1,79 @@
 .piwikSelector.expanded .dropdown {
-  background-color: var(--dark);
-  color: var(--light-transparent);
+  background-color: var(--surface-raised);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
 
   ul {
 
     li {
-      color: var(--light-transparent);
+      color: var(--text-secondary);
+      transition: background-color 0.15s ease;
 
       &.widgetpreview-choosen {
-        background-color: var(--darker);
+        background-color: var(--surface-overlay);
+      }
+
+      &:hover {
+        background-color: var(--hover-overlay);
       }
 
       & > div {
-        color: var(--light);
+        color: var(--text-primary);
       }
     }
   }
 }
 
 #header_message .dropdown {
-  border-color: var(--darker);
+  border-color: var(--border-medium);
 }
 
 .dropdown-content {
-  background-color: var(--darker) !important;
+  background-color: var(--surface-base) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-lg) !important;
 
   .divider {
-    background-color: var(--dark);
+    background-color: var(--border-medium);
   }
 
   li {
-    color: var(--light) !important;
+    color: var(--text-primary) !important;
+    transition: background-color 0.15s ease;
 
-    &:hover, &.selected {
-      background-color: var(--dark) !important;
+    &:hover {
+      background-color: var(--surface-raised) !important;
+    }
+
+    &.selected {
+      background-color: var(--primary-subtle) !important;
     }
 
     &.optgroup {
-      border-top-color: var(--darker) !important;
+      border-top-color: var(--border-medium) !important;
+      color: var(--text-tertiary) !important;
     }
 
     .tableIcon.activeIcon {
-      background-color: var(--dark);
+      background-color: var(--surface-overlay);
     }
   }
 }
 
 .tableConfiguration div.configItem:hover {
-  background-color: var(--darker) !important;
+  background-color: var(--hover-overlay) !important;
 }
 
 
-
 .capabilitiesEdit .addCapability .input-field .select-dropdown {
-  background: var(--dark) !important;
-  box-shadow: 0 0 1px 1px inset var(--darker) !important;
+  background: var(--surface-raised) !important;
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.dropdown-button {
+  input.dataTableSearchInput {
+    color: #fff !important;
+  }
 }

@@ -1,46 +1,70 @@
 .card {
-  background-color: var(--dark) !important;
+  background-color: var(--surface-raised) !important;
+  border: 1px solid var(--border-medium);
+  box-shadow: var(--shadow-sm);
 
   .h1, .h2, .h3, .h4,
   h1, h2, h3, h4,
+  .card-title {
+    color: var(--text-primary) !important;
+  }
+
   p,
   .rss-description,
-  .card-title,
   .card-content {
-    color: var(--light) !important;
+    color: var(--text-secondary) !important;
   }
 
   .card-title a {
-    color: var(--light) !important;
+    color: var(--text-primary) !important;
+
+    &:hover {
+      color: var(--primary-lighter) !important;
+    }
+  }
+
+  .card-action {
+    background-color: var(--dark-subtle);
+    border-top: 1px solid var(--border-medium);
   }
 
   .tableIcon.activeIcon {
-    background: var(--dark) !important;
+    background: var(--surface-overlay) !important;
   }
 
   tr, tr:hover {
     button.table-action {
-      background: var(--dark) !important;
+      background: var(--surface-raised) !important;
+      border: 1px solid var(--border-light);
+
+      &:hover {
+        background: var(--surface-overlay) !important;
+      }
     }
   }
 
   button.table-action {
-    background-color: var(--dark) !important;
+    background-color: var(--surface-raised) !important;
   }
 }
 
 h2.card-title a {
-  color: var(--light) !important;
+  color: var(--text-primary) !important;
 }
 
 
 .marketplace {
 
   .card {
-    border-color: var(--darker) !important;
+    border-color: var(--border-medium) !important;
 
     .downloads {
-      color: var(--light-transparent) !important;
+      color: var(--text-tertiary) !important;
+    }
+
+    &:hover {
+      border-color: var(--border-light) !important;
+      box-shadow: var(--shadow-md);
     }
   }
 }

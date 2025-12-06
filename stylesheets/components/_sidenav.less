@@ -1,18 +1,22 @@
 .sidenav {
-  background-color: var(--darker);
+  background-color: var(--surface-raised);
 
   li {
 
     & > a {
-      color: var(--light);
+      color: var(--text-primary);
 
       i {
         filter: invert(1);
+      }
+
+      &:hover {
+        background-color: var(--hover-overlay);
       }
     }
   }
 }
 
 .sidenav .collapsible-body, .sidenav.fixed .collapsible-body {
-  background-color: var(--dark);
+  background-color: var(--surface-raised);
 }

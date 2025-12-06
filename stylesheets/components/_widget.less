@@ -1,29 +1,39 @@
 .widget {
+  background-color: var(--surface-raised);
+
+  .widgetTop, .widget-title, .widgetName {
+    background-color: var(--surface-raised) !important;
+    color: var(--text-primary) !important;
+  }
+
+  .widgetContent {
+    background-color: var(--surface-raised);
+  }
 
   .promoWidget {
     background-color: transparent;
   }
 
   #piwik-promo-share {
-    background-color: var(--darker);
+    background-color: var(--surface-raised);
   }
 
   .rss-description,
   #piwik-widget-footer {
-    color: var(--light-transparent) !important;
+    color: var(--text-secondary) !important;
   }
 
 
   .simple-realtime-visitor-counter {
-    background-color: var(--darker);
+    background-color: var(--surface-raised);
 
     & > div {
-      color: var(--light);
+      color: var(--text-primary);
     }
   }
 
   .simple-realtime-elaboration {
-    color: var(--light);
+    color: var(--text-primary);
   }
 
   .simple-realtime-metric {

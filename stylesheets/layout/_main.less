@@ -3,20 +3,29 @@
 }
 
 body {
-  background-color: var(--darker);
-  color: var(--light-transparent);
+  background-color: var(--surface-base);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--primary-light);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--primary-lighter);
+  }
 }
 
 .piwik-content-intro p {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: var(--text-secondary) !important;
 }
 
 #multisites .add_new_site a {
-  color: var(--light) !important;
+  color: var(--text-primary) !important;
 }
 
 hr {
-  border-color: var(--darker);
+  border-color: var(--border-medium);
 }
 
 .loadingPiwik img {
@@ -24,13 +33,28 @@ hr {
 }
 
 p {
-  color: var(--light);
+  color: var(--text-secondary);
+}
+
+strong, b {
+  color: var(--text-primary);
 }
 
 #content .card-content p {
-  color: var(--light-transparent);
+  color: var(--text-secondary);
 }
 
 .piwik-content-intro {
-  color: var(--light-transparent) !important;
+  color: var(--text-secondary) !important;
+}
+
+code, pre {
+  background-color: var(--surface-overlay);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+}
+
+::selection {
+  background-color: var(--primary-subtle);
+  color: var(--text-primary);
 }
