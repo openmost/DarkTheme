@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.2.1
+
+- Support AI Chats plugins (ChatGPT and MistralAI)
+
 ## v5.2.0
 
 ### Major Improvements
