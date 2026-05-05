@@ -1,60 +1,18 @@
+.notification  {
+  background-color: transparent !important;
+
+  .notification-body {
+
+    strong {
+      color: var(--theme-color-text);
+    }
+  }
+}
+
 .system.notification {
-  color: var(--text-primary) !important;
-  border-width: 1px;
-  border-style: solid;
-  box-shadow: var(--shadow-md);
+  color: inherit !important;
 
   a {
-    color: var(--text-primary) !important;
-    text-decoration: underline;
-    text-decoration-color: var(--light-subtle);
-
-    &:hover {
-      text-decoration-color: var(--light);
-    }
-  }
-
-  .notification-close {
-    color: var(--text-secondary);
-
-    &:hover {
-      color: var(--text-primary);
-    }
-  }
-
-  &.notification-info {
-    background-color: var(--info-bg) !important;
-    border-color: var(--info-border) !important;
-
-    .icon, i {
-      color: var(--info-text);
-    }
-  }
-
-  &.notification-success {
-    background-color: var(--success-bg);
-    border-color: var(--success-border) !important;
-
-    .icon, i {
-      color: var(--success-text);
-    }
-  }
-
-  &.notification-warning {
-    background-color: var(--warning-bg);
-    border-color: var(--warning-border) !important;
-
-    .icon, i {
-      color: var(--warning-text);
-    }
-  }
-
-  &.notification-danger {
-    background-color: var(--danger-bg);
-    border-color: var(--danger-border) !important;
-
-    .icon, i {
-      color: var(--danger-text);
-    }
+    color: inherit !important;
   }
 }

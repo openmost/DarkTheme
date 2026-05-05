@@ -1,105 +1,123 @@
 ## Documentation
 
-Dark Theme transforms your Matomo Analytics interface into a modern dark experience. This documentation covers the theme architecture and customization options.
+Dark Theme transforms your Matomo Analytics interface into a modern dark experience. This documentation covers the theme architecture and how to customize it.
 
 ### Theme Architecture
 
-The theme uses LESS preprocessing and is organized into modular components for maintainability:
+Since version 5.3.0, all colors are configured in PHP through Matomo's `Theme.configureThemeVariables` event. LESS files are kept only for the few areas that need targeted overrides on top of the variables provided by Matomo core.
 
 ```
-stylesheets/
-├── theme.less          # Main entry point
-├── _variables.less     # CSS custom properties
-└── components/
-    ├── _alert.less     # Alerts and notifications
-    ├── _button.less    # Buttons and actions
-    ├── _calendar.less  # Date picker
-    ├── _canvas.less    # Charts (jqPlot)
-    ├── _card.less      # Cards and widgets
-    ├── _dropdown.less  # Dropdown menus
-    ├── _form.less      # Form inputs
-    ├── _map.less       # RealTimeMap & UserCountryMap
-    ├── _modal.less     # Modal dialogs
-    ├── _nav.less       # Navigation
-    ├── _table.less     # Data tables
-    ├── _visits_log.less # Visitor log
-    └── ...
+DarkTheme/
+├── DarkTheme.php          # Theme variable configuration
+├── plugin.json            # Theme metadata (requires Matomo >= 5.10)
+└── stylesheets/
+    ├── theme.less         # Main entry point
+    ├── _variables.less    # Local LESS variables (optional)
+    ├── layout/
+    │   └── _main.less     # Layout-level rules (e.g. scrollbar)
+    ├── pages/
+    │   └── _login.less    # Login & onboarding overrides
+    └── components/
+        ├── _activity_log.less
+        ├── _admin.less
+        ├── _alert.less
+        ├── _copy_clipboard.less
+        ├── _custom_reports.less
+        ├── _dropdown.less
+        ├── _entity_list.less
+        ├── _funnels.less
+        ├── _input.less
+        ├── _jqplot.less          # Chart canvas, tooltips, axes
+        ├── _multi_sites.less
+        ├── _notification.less
+        ├── _scheduled_reports.less
+        ├── _segment.less
+        ├── _sidebar.less
+        ├── _tag_manager.less
+        ├── _transitions_report.less
+        ├── _visitor_profile.less
+        ├── _visits_log.less
+        └── _widget.less
 ```
 
-### CSS Variables
+### PHP Theme Variables
 
-The theme defines a comprehensive set of CSS custom properties in `_variables.less`:
+`DarkTheme.php` registers a `configureThemeVariables` listener and assigns values to `\Piwik\Plugin\ThemeStyles`. The values are exposed by Matomo core as CSS custom properties (e.g. `--theme-color-background-base`) and are used throughout the UI.
 
-#### Color Scales
+The palette is split into four scales:
 
-**Light Scale** (for text and highlights):
-- `--light` - Pure white (#ffffff)
-- `--light-muted` - Slightly transparent white (85%)
-- `--light-transparent` - Semi-transparent (70%)
-- `--light-subtle` - Subtle text (50%)
-- `--light-dimmed` - Dimmed elements (30%)
+**Brand**
+- `primary` — `#4a6fc7`
+- `primaryLight` — `#6b8fd9` (used for links, focus ring, selected menu)
+- `primaryLighter` — `#8aa8e6`
+- `primaryDark` — `#3450a3`
 
-**Primary Scale** (brand/accent colors):
-- `--primary` - Main accent (#3450a3)
-- `--primary-light` - Hover states
-- `--primary-lighter` - Active states
-- `--primary-dark` - Pressed states
-- `--primary-subtle` - Backgrounds with accent
+**Surfaces (lightest → darkest)**
+- `surfaceOverlay` — `#3a424d` (popovers, hover backgrounds, code blocks)
+- `surfaceRaised` — `#2b3138` (widgets, cards, header background)
+- `surfaceBase` — `#202329` (page background)
+- `surfaceGround` — `#181a1f` (deepest layer / scrollbar track)
 
-**Dark Scale** (backgrounds):
-- `--dark-elevated` - Elevated surfaces
-- `--dark` - Card/widget backgrounds (#2b3138)
-- `--darker` - Page background (#202329)
-- `--darkest` - Deepest shadows
+**Text (most prominent → faded)**
+- `textPrimary` — `#ffffff`
+- `textSecondary` — `rgba(255, 255, 255, 0.85)`
+- `textTertiary` — `rgba(255, 255, 255, 0.65)`
+- `textDisabled` — `rgba(255, 255, 255, 0.40)`
 
-#### Semantic Variables
+**Borders**
+- `borderSubtle` — `#3a424d`
+- `borderStrong` — `#4a525d`
 
-- **Borders**: `--border-light`, `--border-medium`, `--border-strong`
-- **Surfaces**: `--surface-base`, `--surface-raised`, `--surface-overlay`
-- **Text**: `--text-primary`, `--text-secondary`, `--text-tertiary`
-- **Status**: `--success`, `--warning`, `--danger`, `--info`
+These local variables feed the official `ThemeStyles` properties: `colorBrand`, `colorText*`, `colorBackground*`, `colorBorder*`, `colorWidget*`, `colorMenuContrast*`, `colorHeader*`, `colorLink`, `colorFocusRing`, `colorCode*`, `colorBoxShadow`, and `filterOnIllustration` (which inverts white illustrations so they look right on a dark background).
 
 ### Customizing Colors
 
-Override any CSS variable in your own stylesheet:
+The recommended way to customize the palette is to fork the plugin and adjust the variables in `DarkTheme.php`:
 
-```css
-:root {
-  --primary: #your-brand-color;
-  --dark: #your-background-color;
+```php
+public function configureThemeVariables(Plugin\ThemeStyles $vars)
+{
+    $vars->colorBrand            = '#your-brand-color';
+    $vars->colorBackgroundBase   = '#your-background-color';
+    $vars->colorWidgetBackground = '#your-widget-color';
+    // ...
 }
 ```
 
-### Chart Theming
+You can also override the generated CSS variables from your own stylesheet:
 
-Charts use Matomo's color namespace system. The theme defines colors for:
+```css
+:root {
+  --theme-color-brand: #your-brand-color;
+  --theme-color-background-base: #your-background-color;
+}
+```
 
-- `.sparkline-colors` - Sparkline graphs
-- `.bar-graph-colors` - Bar charts
-- `.pie-graph-colors` - Pie charts
-- `.evolution-graph-colors` - Line/evolution charts
+After changing any value, clear Matomo's asset cache (Administration → System → General Settings → "Clear all caches").
 
-Each namespace defines background, series colors, grid lines, and labels.
+### Component Overrides
 
-### Map Theming
+Each file in `stylesheets/components/` targets a specific area of Matomo where the default core CSS does not pick up the theme variables cleanly:
 
-Maps use dedicated color namespaces:
+- **Charts** (`_jqplot.less`) — canvas backgrounds, gridlines, tooltips
+- **Forms & dropdowns** (`_input.less`, `_dropdown.less`) — input backgrounds, autocomplete panels
+- **Visitor reports** (`_visits_log.less`, `_visitor_profile.less`, `_activity_log.less`) — timeline and profile colours
+- **Plugin support** — `_funnels.less`, `_tag_manager.less`, `_custom_reports.less`, `_multi_sites.less`, `_scheduled_reports.less`, `_transitions_report.less`
+- **UI chrome** — `_sidebar.less`, `_admin.less`, `_widget.less`, `_alert.less`, `_notification.less`, `_segment.less`, `_entity_list.less`, `_copy_clipboard.less`
 
-- `.realtime-map-colors` - Real-time visitor map
-- `.visitor-map-colors` - User country/region maps
+### Compatibility
 
-These define country fills, boundaries, choropleth ranges, and tooltips.
+Dark Theme 5.3.x requires **Matomo 5.10.0 or later** because it relies on the extended `ThemeStyles` API. For Matomo 5.0–5.9, use Dark Theme 5.2.x. For Matomo 4.x, use Dark Theme 1.x.
 
 ### Contributing
 
 To contribute:
 
 1. Fork the [GitHub repository](https://github.com/openmost/DarkTheme)
-2. Follow the component-based structure
-3. Test across different Matomo screens
+2. Add or refine variables in `DarkTheme.php` first; only fall back to LESS overrides when a setting is not exposed by `ThemeStyles`
+3. Test across Matomo's main screens (Dashboard, Visitors → Overview, Behaviour, Acquisition, Admin, Tag Manager, Funnels)
 4. Submit a pull request
 
 ### Credits
 
 - Theme by [Openmost](https://openmost.io)
-- Sparkline implementation inspired by [lw1.at](https://lw1.at)

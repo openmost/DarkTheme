@@ -1,42 +1,27 @@
-.widget {
-  background-color: var(--surface-raised);
+.matomo-widget {
 
-  .widgetTop, .widget-title, .widgetName {
-    background-color: var(--surface-raised) !important;
-    color: var(--text-primary) !important;
-  }
+  .UserCountryMap-overlay {
 
-  .widgetContent {
-    background-color: var(--surface-raised);
-  }
+    .content {
+      background: var(--theme-color-menu-contrast-backgroundHover);
 
-  .promoWidget {
-    background-color: transparent;
-  }
-
-  #piwik-promo-share {
-    background-color: var(--surface-raised);
-  }
-
-  .rss-description,
-  #piwik-widget-footer {
-    color: var(--text-secondary) !important;
-  }
-
-
-  .simple-realtime-visitor-counter {
-    background-color: var(--surface-raised);
-
-    & > div {
-      color: var(--text-primary);
+      .map-stats {
+        color: var(--theme-color-widget-title-text) !important;
+      }
     }
   }
 
-  .simple-realtime-elaboration {
-    color: var(--text-primary);
+  select {
+    background: var(--theme-color-background-contrast);
+    border-color: var(--theme-color-menu-contrast-backgroundHover);
+    color: var(--theme-color-widget-title-text) !important;
   }
 
-  .simple-realtime-metric {
-    color: inherit;
+  .limitSelection > div .select-wrapper {
+    background-color: var(--theme-color-background-contrast);
+
+    &:hover {
+      background-color: var(--theme-color-background-base);
+    }
   }
 }

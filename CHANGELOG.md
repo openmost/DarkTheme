@@ -1,5 +1,31 @@
 # Changelog
 
+## v5.3.0
+
+### Breaking
+- Bumped Matomo requirement to **>= 5.10.0** (the new theme variable API is required)
+
+### Major Improvements
+- **Theme variables moved to PHP** — colors are now configured through the `Theme.configureThemeVariables` event in `DarkTheme.php`, replacing the previous CSS custom-properties approach. This makes the theme respect Matomo's native `ThemeStyles` system and stay consistent across core and plugins.
+- **Reorganised color tokens** into four explicit scales:
+  - **Brand**: `primary`, `primaryLight`, `primaryLighter`, `primaryDark`
+  - **Surface**: `surfaceGround`, `surfaceBase`, `surfaceRaised`, `surfaceOverlay`
+  - **Text**: `textPrimary`, `textSecondary`, `textTertiary`, `textDisabled`
+  - **Border**: `borderSubtle`, `borderStrong`
+- **Wider coverage of `ThemeStyles` properties**: focus rings, menu hover background, disabled backgrounds, light borders, box shadow, and `filterOnIllustration` (auto-inverts white illustrations/SVGs for dark backgrounds).
+
+### Component Reorganisation
+- Removed component overrides now handled correctly by the PHP theme variables: `_button`, `_card`, `_modal`, `_table`, `_form`, `_headings`, `_icon`, `_tabs`, `_menu`, `_search`, `_dialog`, `_chip`, `_collection`, `_data_list`, `_datepicker`, `_canvas`, `_demo`, `_debug_preview`, `_message`, `_overlay`, `_plugin`, `_plugin_promo`, `_scrollbar`, `_segment_generator`, `_sidenav`, `_sparkline`, `_annotation`, `_comparison`, `_control`, `_expandable_selector`, `_map`, `_navbar`, `_ui_menu`, `_ai_chat`, `_visits_live`.
+- Added focused stylesheets where targeted overrides are still needed:
+  - `_activity_log`, `_copy_clipboard`, `_custom_reports`, `_input`, `_jqplot`, `_multi_sites`, `_scheduled_reports`, `_segment`, `_sidebar`, `_transitions_report`
+- Renamed `_tagmanager` / `_tagmanager_debugbar` / `_transitions` to `_tag_manager` and `_transitions_report`.
+- Updated remaining component overrides: `_admin`, `_alert`, `_dropdown`, `_entity_list`, `_funnels`, `_notification`, `_visitor_profile`, `_visits_log`, `_widget`.
+
+### Fixes
+- Light text now consistently rendered on dark surfaces (previous override forced dark text in some screens).
+- Restored visibility of disabled inputs and buttons via `colorBackgroundDisabled` / `colorTextDisabled`.
+- Focus ring is now visible on form fields and links.
+
 ## v5.2.1
 
 - Support AI Chats plugins (ChatGPT and MistralAI)
