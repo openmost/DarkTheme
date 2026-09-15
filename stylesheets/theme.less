@@ -1,13 +1,20 @@
-@import "_variables";
+// Colors are configured in DarkTheme.php (Theme.configureThemeVariables). These stylesheets only
+// cover the areas that need targeted overrides.
+
+// every user gets the dark theme, the browser draws its own controls (scrollbars, form fields,
+// date pickers) dark as well
+:root {
+  color-scheme: dark;
+}
 
 @import "layout/_main";
+@import "pages/_login";
 
 @import "components/_activity_log";
 @import "components/_admin";
 @import "components/_alert";
 @import "components/_copy_clipboard";
 @import "components/_custom_reports";
-@import "components/_dropdown";
 @import "components/_entity_list";
 @import "components/_funnels";
 @import "components/_input";
@@ -15,11 +22,11 @@
 @import "components/_multi_sites";
 @import "components/_notification";
 @import "components/_period_selector";
+@import "components/_personal_settings";
 @import "components/_scheduled_reports";
 @import "components/_segment";
 @import "components/_sidebar";
 @import "components/_tag_manager";
-@import "components/_transitions_report";
 @import "components/_visitor_profile";
 @import "components/_visits_log";
 @import "components/_widget";

@@ -1,27 +1,28 @@
 {
     "name": "DarkTheme",
-    "description": "A modern dark theme for Matomo",
+    "description": "A modern dark theme for Matomo, applied to every user",
     "theme": true,
-    "version": "5.3.0",
+    "version": "6.0.0",
     "require": {
-        "matomo": ">=5.10.0,<6.0.0-b1"
+        "php": ">=8.1.0",
+        "matomo": ">=6.0.0-b1,<7.0.0-b1"
     },
     "stylesheet": "stylesheets\/theme.less",
-    "homepage": "https://openmost.io/products/matomo-dark-theme/",
+    "homepage": "https:\/\/openmost.com\/matomo\/extensions\/dark-theme",
     "license": "GPL v3+",
     "keywords": [
-        "Dark Theme", "Dark", "Modern", "Black"
+        "Dark Theme", "Dark", "Dark Mode", "Modern", "Black"
     ],
     "support": {
-        "email": "ronan@openmost.io",
-        "issues": "https://github.com/openmost/DarkTheme/issues",
-        "source": "https://github.com/openmost/DarkTheme"
+        "email": "ronan@openmost.com",
+        "issues": "https:\/\/github.com\/openmost\/DarkTheme\/issues",
+        "source": "https:\/\/github.com\/openmost\/DarkTheme"
     },
     "authors": [
         {
             "name": "Openmost",
-            "email": "ronan@openmost.io",
-            "homepage": "https://openmost.io"
+            "email": "ronan@openmost.com",
+            "homepage": "https:\/\/openmost.com"
         }
     ]
 }

@@ -13,13 +13,32 @@ Alternatively, download from GitHub and extract to your `plugins/` directory.
 
 **Is the theme active for all users?**
 
-Yes. When activated, the Dark Theme applies to all users on your Matomo instance. Individual users cannot switch between themes.
+Yes. When activated, the Dark Theme applies to all users on your Matomo instance, whatever theme mode they picked in their personal settings.
 
 **Which Matomo versions are supported?**
 
-- Dark Theme **5.3.x** requires **Matomo 5.10.0 or later** (uses the extended `ThemeStyles` API).
-- Dark Theme **5.2.x** supports Matomo 5.0 – 5.9.
+- Dark Theme **6.x** supports Matomo 6.
+- Dark Theme **5.3.x** requires Matomo 5.10.0 or later.
+- Dark Theme **5.2.x** supports Matomo 5.0 to 5.9.
 - For Matomo 4.x, use Dark Theme version 1.x.
+
+### Matomo dark mode
+
+**Matomo 6 has a dark mode, why use Dark Theme?**
+
+In Matomo 6, each user chooses a light or dark mode, and the default is light. Dark Theme gives the whole team the same dark interface, with Openmost's dark palette, without asking every user to change their settings.
+
+**Why is the theme mode option missing from my personal settings?**
+
+Dark Theme applies the dark mode to every user, so the option has no effect and is hidden. It comes back when the default Matomo theme is activated.
+
+**Can a user still choose the light mode?**
+
+No, not while Dark Theme is active. To let each user choose, activate the default Matomo theme (Morpheus) under *Administration > Themes*.
+
+**Are the scheduled report emails dark too?**
+
+No. Report emails keep Matomo's light colors: many mail clients force a white background, where light text would not be readable.
 
 ### Compatibility
 
@@ -38,7 +57,7 @@ Yes. The theme is designed to work with official Matomo plugins including:
 
 **Will it conflict with other themes?**
 
-No. Only one theme can be active at a time. The Dark Theme completely replaces the default styling without modifying any HTML structure.
+No. Only one theme can be active at a time. The Dark Theme replaces the default styling without modifying any HTML structure.
 
 **Does it affect tracking or data collection?**
 
@@ -48,12 +67,12 @@ No. This is a purely visual theme. It does not modify tracking code, data collec
 
 **Can I customize the colors?**
 
-Yes. Since version 5.3.0, all colors are configured in PHP via Matomo's `Theme.configureThemeVariables` event. The recommended approach is to fork the plugin and edit `DarkTheme.php`:
+Yes. All colors are configured in PHP via Matomo's `Theme.configureThemeVariables` event. The recommended approach is to fork the plugin and edit the palette in `DarkTheme.php`:
 
 ```php
-$vars->colorBrand            = '#your-brand-color';
-$vars->colorBackgroundBase   = '#your-page-background';
-$vars->colorWidgetBackground = '#your-widget-background';
+$vars->colorBrand              = '#your-brand-color';
+$vars->colorBackgroundBase     = '#your-page-background';
+$vars->colorBackgroundContrast = '#your-widget-background';
 ```
 
 You can also override the generated CSS variables from a custom stylesheet:
@@ -69,13 +88,9 @@ Remember to clear Matomo's cache after any change.
 
 **Where are the style files located?**
 
-- Color configuration: `DarkTheme.php` (in `configureThemeVariables()`)
+- Color configuration: `DarkTheme.php`
 - LESS overrides: `stylesheets/` (entry point: `theme.less`)
 - Per-component overrides: `stylesheets/components/`
-
-**Can I modify specific components?**
-
-Yes. The component files in `stylesheets/components/` each target a focused area (visitor log, sidebar, dropdowns, charts, plugin-specific UIs, etc.). Edit the relevant file and clear the asset cache.
 
 ### Troubleshooting
 
@@ -95,13 +110,9 @@ This is usually a caching issue. Clear both Matomo's asset cache and your browse
 
 We update the theme regularly to support new Matomo versions. Check for theme updates in the Marketplace. If no update is available yet, please open a GitHub issue.
 
-**I just upgraded to Dark Theme 5.3 and the install fails**
+**My custom CSS overrides using `--theme-color-widget-*` or `--theme-color-menu-contrast-*` variables**
 
-Dark Theme 5.3 requires **Matomo 5.10.0 or later**. Either upgrade Matomo or stay on Dark Theme 5.2.x until you can.
-
-**My custom CSS variable overrides stopped working after upgrading to 5.3**
-
-The internal variable names changed when colors moved from local CSS custom properties to Matomo's `ThemeStyles` system. Override the official `--theme-color-*` variables (e.g. `--theme-color-brand`, `--theme-color-background-base`) instead of the previous `--primary` / `--dark` names.
+These variables are deprecated since Matomo 6 and will be removed in Matomo 7. Prefer `--theme-color-background-contrast`, `--theme-color-background-tinyContrast` and `--theme-color-text-highContrast`.
 
 ### Support & Contributing
 
@@ -123,4 +134,4 @@ We actively use this theme on multiple production Matomo instances and are commi
 
 **Can you create a custom theme for my company?**
 
-Yes! We offer custom theme development. Contact us at ronan@openmost.io or visit [openmost.io](https://openmost.io).
+Yes! We offer custom theme development. Contact us at ronan@openmost.com or visit [openmost.com](https://openmost.com).

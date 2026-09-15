@@ -1,2 +1,5 @@
-# Created by .ignore support plugin (hsz.mobi)
 .idea/
+node_modules
+.claude
+/vue/dist/*.umd.js
+/vue/dist/*.common.js

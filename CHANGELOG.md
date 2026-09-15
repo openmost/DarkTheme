@@ -1,5 +1,27 @@
 # Changelog
 
+## v6.0.0
+
+### Matomo 6
+
+- Compatibility with Matomo 6.x (`>=6.0.0-b1,<7.0.0-b1`), requires PHP 8.1+ and MySQL 8.0+ (or MariaDB 10.6+).
+
+### Improvements
+
+- **Dark for every user**: Matomo 6 comes with a light / dark mode chosen by each user. Dark Theme keeps applying its dark palette to everyone, whatever mode they picked, and the page is rendered in dark mode so the Matomo dark mode rules (icons, flags, charts, maps) apply as well.
+- The theme mode stays dark when Matomo switches it in the browser, e.g. after saving the personal settings. The theme mode choice is hidden from the personal settings, as it has no effect.
+- Browser controls (scrollbars, form fields, date pickers) are drawn dark (`color-scheme: dark`).
+- Palette completed with the colors added in Matomo 6: success, input placeholder, alternative border and overlay shadow. Colors added by future Matomo releases use their dark value.
+- Report emails keep Matomo's light colors, so they stay readable in every mail client.
+- Login and onboarding overrides are loaded again (they were missing from the stylesheet entry point).
+
+### Technical
+
+- Less overrides use the Matomo 6 theme variables instead of the deprecated `widget-*` and `menu-contrast-*` ones.
+- Removed the overrides of UI elements that no longer exist in Matomo 6 (legacy selector dropdown, Transitions text), and the empty `_variables.less` and config files.
+- New TypeScript library built with the Matomo Vite build (`vue/`), locking the dark mode in the browser.
+- Plugin homepage and support on openmost.com.
+
 ## v5.3.0
 
 ### Breaking
