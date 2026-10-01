@@ -18,7 +18,8 @@ Yes. When activated, the Dark Theme applies to all users on your Matomo instance
 **Which Matomo versions are supported?**
 
 - Dark Theme **5.3.x** requires **Matomo 5.10.0 or later** (uses the extended `ThemeStyles` API).
-- Dark Theme **5.2.x** supports Matomo 5.0 – 5.9.
+- Dark Theme **5.2.x** supports Matomo 5.0 to 5.9.
+- On Matomo 6, use Dark Theme 6.x.
 - For Matomo 4.x, use Dark Theme version 1.x.
 
 ### Compatibility
@@ -81,11 +82,7 @@ Yes. The component files in `stylesheets/components/` each target a focused area
 
 **Charts or maps don't look right**
 
-Clear your Matomo cache:
-1. Go to Administration > System > General Settings
-2. Click "Clear all caches"
-
-Or delete the files in the `tmp/assets/` directory.
+Clear the Matomo caches: run `./console core:clear-caches` on the server, or delete the files in the `tmp/assets/` directory.
 
 **Some elements still appear light**
 
@@ -123,4 +120,4 @@ We actively use this theme on multiple production Matomo instances and are commi
 
 **Can you create a custom theme for my company?**
 
-Yes! We offer custom theme development. Contact us at ronan@openmost.io or visit [openmost.io](https://openmost.io).
+Yes. Openmost builds [custom Matomo themes](https://openmost.com/matomo/services/custom-theme?utm_source=matomo_marketplace&utm_medium=referral&utm_campaign=services&utm_content=darktheme) in your own brand colours and fonts, on the official theme API. You can also contact us at ronan@openmost.com.

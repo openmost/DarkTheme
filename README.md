@@ -1,69 +1,45 @@
 # Dark Theme
 
-## Description
+A modern dark theme for Matomo, applied to every user of the instance.
 
-A comprehensive dark theme for Matomo Analytics that transforms the entire interface into a modern, eye-friendly dark experience. Built with accessibility and readability in mind, this theme provides proper contrast ratios and consistent styling across all Matomo features.
+## Features
 
-### Key Features
-
-- **Complete UI Coverage** - Every screen, widget, modal, and component is styled for dark mode
-- **Charts & Graphs** - All jqPlot charts (sparklines, bar graphs, pie charts, evolution graphs) render beautifully with dark backgrounds and vibrant data colors
-- **Maps Support** - RealTimeMap and UserCountryMap fully themed with appropriate color scales for data visualization
-- **Consistent Design** - Cards, widgets, sidebar navigation, and modals all share a cohesive dark aesthetic
-- **Native Theme API** - Built on Matomo's `Theme.configureThemeVariables` event for seamless integration with core and plugins
-- **Plugin Compatibility** - Works seamlessly with Matomo plugins including Funnels, Tag Manager, AI Chats, Custom Reports, Multi Sites, Scheduled Reports, Transitions, and more
-
-### Why Choose Dark Theme?
-
-- Reduces eye strain during extended analytics sessions
-- Perfect for low-light environments and night-time work
-- Professional appearance that matches modern dark-mode applications
-- Actively maintained and updated with each Matomo release
-
-### Customization
-
-The theme exposes its full color palette through Matomo's `ThemeStyles` API in `DarkTheme.php`. Fork the plugin to adjust the brand, surface, text, and border scales — or override the generated `--theme-color-*` CSS variables from your own stylesheet to match your brand.
-
-**Thank you for installing!**
+- **Dark for every user**: every theme color gets a single dark value, so the whole team gets the same dark interface whatever light or dark mode each user picked.
+- **Complete coverage**: every screen, widget, modal and component is styled, including the scrollbars.
+- **Charts and maps**: sparklines, bar, pie and evolution graphs, the Real-time Map and the Visitor Map render on dark backgrounds with readable data colors.
+- **Native theme API**: colors are set through Matomo's `Theme.configureThemeVariables` event, so core and third party plugins pick them up.
+- **Plugin support**: Tag Manager, Funnels, Custom Reports, All Websites dashboard, Scheduled Reports, Transitions, AI chat plugins (ChatGPT, MistralAI) and more.
+- **Purely visual**: no change to tracking, data or reports.
 
 ## Requirements
 
-- Matomo **5.10.0** or later (Dark Theme 5.3.x)
-- For Matomo 5.0 – 5.9, install Dark Theme **5.2.x**
-- For Matomo 4.x, install Dark Theme **1.x**
+- Matomo 5.10.0 or later, up to Matomo 6 excluded (`>=5.10.0,<6.0.0-b1`)
+- For Matomo 5.0 to 5.9, install Dark Theme 5.2.x. On Matomo 6, install Dark Theme 6.x.
 
-## Installation
+## Installation / Configuration
 
-**From the Marketplace (recommended)**
+1. Go to *Administration > Platform > Marketplace*, filter by **Themes** and search for "Dark Theme".
+2. Click **Install**, then **Activate**. The theme applies to every user immediately.
+3. If some elements still look light after an update, run `./console core:clear-caches` on the server, or empty `tmp/assets/`.
 
-1. Go to *Administration → Marketplace → Themes*
-2. Search for "Dark Theme"
-3. Click **Install**, then **Activate**
+There are no settings. To go back to the default look, activate the default Matomo theme (Morpheus).
 
-**Manual installation**
+To adjust the palette, fork the plugin and edit the brand, surface, text and border scales in `DarkTheme.php`, or override the generated `--theme-color-*` CSS variables from your own plugin. See [docs/index.md](docs/index.md).
 
-1. Download the latest release from [GitHub](https://github.com/openmost/DarkTheme)
-2. Extract the archive into your Matomo `plugins/` directory as `plugins/DarkTheme/`
-3. Activate the theme under *Administration → Themes*
+## Need help with Matomo?
 
-After installation or any customization, clear the asset cache: *Administration → System → General Settings → "Clear all caches"*.
-
-## Documentation
-
-- [Theme architecture and customization](docs/index.md)
-- [Frequently asked questions](docs/faq.md)
-- [Changelog](CHANGELOG.md)
+Openmost is an official Matomo Implementation Partner. We also build [custom Matomo themes](https://openmost.com/matomo/services/custom-theme?utm_source=matomo_marketplace&utm_medium=referral&utm_campaign=services&utm_content=darktheme) in your own brand colours and fonts, on the official theme API, in light and dark mode.
 
 ## Support
 
-If you encounter any issues or have suggestions, please:
-- Open an issue on [GitHub](https://github.com/openmost/DarkTheme/issues)
-- Contact us at ronan@openmost.io
+- Homepage: https://openmost.com/matomo/extensions/dark-theme
+- Issues: https://github.com/openmost/DarkTheme/issues
+- Email: ronan@openmost.com
 
-## Want More?
+## Screenshots
 
-Looking for a custom theme tailored to your brand? We create bespoke Matomo themes for businesses. Visit [openmost.io](https://openmost.io) or contact us to discuss your requirements.
+See the `screenshots/` folder, or the plugin page on the Matomo Marketplace.
 
 ## License
 
-Released under the [GPL v3 or later](LICENSE) license.
+GPL v3 or later, see [LICENSE](LICENSE).

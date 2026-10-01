@@ -1,0 +1,16 @@
+{
+    "OpenmostCommunication": {
+        "Dismiss": "Descartar",
+        "Matomo6Title": "Matomo 6 ya está aquí",
+        "Matomo6Body": "Openmost es Implementation Partner oficial de Matomo y trabaja con Matomo desde 2016. Actualizar ahora es más sencillo que ponerse al día dentro de unos meses: las novedades y las mejoras de seguridad llegan primero a Matomo 6, y le llevamos allí con sus informes y su seguimiento intactos.",
+        "Matomo6Cta": "Planificar mi actualización a Matomo 6",
+        "WidgetName": "Openmost: configuración del seguimiento de chatbots de IA",
+        "AIChatbotsTitle": "¿Necesita ayuda para configurar el seguimiento de chatbots de IA?",
+        "AIChatbotsBody": "Como Implementation Partner oficial de Matomo, Openmost puede configurar el seguimiento de chatbots de IA por usted, en Matomo On-Premise o Cloud.",
+        "AIChatbotsCta": "Solicitar la configuración",
+        "TrackingPlanTitle": "Los eventos deben configurarse manualmente",
+        "TrackingPlanBody": "Los eventos miden clics, descargas, envíos de formularios o reproducciones de vídeo, siempre que se registren. Como Implementation Partner oficial de Matomo, Openmost diseña e implementa un plan de etiquetado adaptado a su sitio.",
+        "TrackingPlanCta": "Crear mi plan de etiquetado",
+        "EventsEnhancedLink": "Saque más partido a sus eventos con Events Enhanced"
+    }
+}

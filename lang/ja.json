@@ -1,0 +1,16 @@
+{
+    "OpenmostCommunication": {
+        "Dismiss": "閉じる",
+        "Matomo6Title": "Matomo 6 が登場しました",
+        "Matomo6Body": "Openmost は Matomo 公式 Implementation Partner として、2016 年から Matomo に携わっています。数か月後に追いつくより、今アップグレードする方が簡単です。新機能とセキュリティの改善はまず Matomo 6 に提供されます。レポートとトラッキングをそのままに、Matomo 6 への移行をお手伝いします。",
+        "Matomo6Cta": "Matomo 6 へのアップグレードを計画する",
+        "WidgetName": "Openmost: AI チャットボットトラッキングの設定",
+        "AIChatbotsTitle": "AI チャットボットトラッキングの設定でお困りですか？",
+        "AIChatbotsBody": "Matomo 公式 Implementation Partner の Openmost が、Matomo On-Premise でも Cloud でも、AI チャットボットトラッキングを代わりに設定します。",
+        "AIChatbotsCta": "設定を依頼する",
+        "TrackingPlanTitle": "イベントは手動で設定する必要があります",
+        "TrackingPlanBody": "イベントを計測すると、クリック、ダウンロード、フォーム送信、動画再生などを把握できます（トラッキングの設定が必要です）。Matomo 公式 Implementation Partner の Openmost が、サイトに合ったトラッキングプランを設計・実装します。",
+        "TrackingPlanCta": "トラッキングプランを作成する",
+        "EventsEnhancedLink": "Events Enhanced でイベントをさらに活用する"
+    }
+}

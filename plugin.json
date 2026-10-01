@@ -1,27 +1,33 @@
 {
     "name": "DarkTheme",
-    "description": "A modern dark theme for Matomo",
+    "description": "A modern dark theme for Matomo, applied to every user of the instance.",
+    "version": "5.3.1",
     "theme": true,
-    "version": "5.3.0",
+    "stylesheet": "stylesheets/theme.less",
     "require": {
         "matomo": ">=5.10.0,<6.0.0-b1"
-    },
-    "stylesheet": "stylesheets\/theme.less",
-    "homepage": "https://openmost.io/products/matomo-dark-theme/",
-    "license": "GPL v3+",
-    "keywords": [
-        "Dark Theme", "Dark", "Modern", "Black"
-    ],
-    "support": {
-        "email": "ronan@openmost.io",
-        "issues": "https://github.com/openmost/DarkTheme/issues",
-        "source": "https://github.com/openmost/DarkTheme"
     },
     "authors": [
         {
             "name": "Openmost",
-            "email": "ronan@openmost.io",
-            "homepage": "https://openmost.io"
+            "email": "ronan@openmost.com",
+            "homepage": "https://openmost.com"
         }
+    ],
+    "support": {
+        "email": "ronan@openmost.com",
+        "issues": "https://github.com/openmost/DarkTheme/issues",
+        "source": "https://github.com/openmost/DarkTheme"
+    },
+    "homepage": "https://openmost.com/matomo/extensions/dark-theme",
+    "preview": {
+        "video_url": "https://www.youtube-nocookie.com/embed/lwCAXxJALJw"
+    },
+    "license": "GPL v3+",
+    "keywords": [
+        "dark-theme",
+        "dark",
+        "modern",
+        "black"
     ]
 }

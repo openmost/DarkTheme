@@ -1,0 +1,16 @@
+{
+    "OpenmostCommunication": {
+        "Dismiss": "关闭",
+        "Matomo6Title": "Matomo 6 已发布",
+        "Matomo6Body": "Openmost 是 Matomo 官方 Implementation Partner，自 2016 年起从事 Matomo 相关工作。现在升级比几个月后再追赶更简单：新功能和安全改进会优先在 Matomo 6 中推出，我们会帮您迁移到 Matomo 6，报表和跟踪数据完好无损。",
+        "Matomo6Cta": "规划我的 Matomo 6 升级",
+        "WidgetName": "Openmost：AI 聊天机器人跟踪设置",
+        "AIChatbotsTitle": "需要帮助设置 AI 聊天机器人跟踪吗？",
+        "AIChatbotsBody": "作为 Matomo 官方 Implementation Partner，Openmost 可以为您配置 AI 聊天机器人跟踪，适用于 Matomo On-Premise 或 Cloud。",
+        "AIChatbotsCta": "请人帮我配置",
+        "TrackingPlanTitle": "事件需要手动配置",
+        "TrackingPlanBody": "事件可以衡量点击、下载、表单提交或视频播放，前提是已完成跟踪配置。作为 Matomo 官方 Implementation Partner，Openmost 为您的网站设计并实施合适的跟踪方案。",
+        "TrackingPlanCta": "制定我的跟踪方案",
+        "EventsEnhancedLink": "使用 Events Enhanced 充分利用您的事件数据"
+    }
+}

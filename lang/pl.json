@@ -1,0 +1,16 @@
+{
+    "OpenmostCommunication": {
+        "Dismiss": "Odrzuć",
+        "Matomo6Title": "Matomo 6 jest już dostępne",
+        "Matomo6Body": "Openmost jest oficjalnym partnerem Matomo (Implementation Partner) i pracuje z Matomo od 2016 roku. Aktualizacja teraz jest prostsza niż nadrabianie zaległości za kilka miesięcy: nowe funkcje i poprawki bezpieczeństwa trafiają najpierw do Matomo 6, a my przenosimy tam instancję z nienaruszonymi raportami i śledzeniem.",
+        "Matomo6Cta": "Zaplanuj aktualizację do Matomo 6",
+        "WidgetName": "Openmost: konfiguracja śledzenia chatbotów AI",
+        "AIChatbotsTitle": "Potrzebujesz pomocy w konfiguracji śledzenia chatbotów AI?",
+        "AIChatbotsBody": "Jako oficjalny partner Matomo (Implementation Partner) Openmost może skonfigurować śledzenie chatbotów AI za Ciebie, w Matomo On-Premise lub Cloud.",
+        "AIChatbotsCta": "Zleć konfigurację",
+        "TrackingPlanTitle": "Zdarzenia trzeba skonfigurować ręcznie",
+        "TrackingPlanBody": "Zdarzenia mierzą kliknięcia, pobrania, wysłane formularze czy odtworzenia wideo, pod warunkiem że są śledzone. Jako oficjalny partner Matomo (Implementation Partner) Openmost projektuje i wdraża plan śledzenia dopasowany do Twojej strony.",
+        "TrackingPlanCta": "Stwórz mój plan śledzenia",
+        "EventsEnhancedLink": "Wyciśnij więcej ze swoich zdarzeń dzięki Events Enhanced"
+    }
+}
