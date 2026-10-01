@@ -1,5 +1,11 @@
 # Changelog
 
+## v6.0.1
+
+- Plugin translated into 12 languages (Arabic, Chinese simplified and traditional, Dutch, English, French, German, Italian, Japanese, Polish, Portuguese, Spanish).
+- Marketplace metadata: video preview, keywords and new screenshots.
+- Shorter Marketplace description that fits the plugin cards, and campaign parameters on the Openmost links of the README.
+
 ## v6.0.0
 
 ### Matomo 6
@@ -28,7 +34,7 @@
 - Bumped Matomo requirement to **>= 5.10.0** (the new theme variable API is required)
 
 ### Major Improvements
-- **Theme variables moved to PHP** — colors are now configured through the `Theme.configureThemeVariables` event in `DarkTheme.php`, replacing the previous CSS custom-properties approach. This makes the theme respect Matomo's native `ThemeStyles` system and stay consistent across core and plugins.
+- **Theme variables moved to PHP**: colors are now configured through the `Theme.configureThemeVariables` event in `DarkTheme.php`, replacing the previous CSS custom-properties approach. This makes the theme respect Matomo's native `ThemeStyles` system and stay consistent across core and plugins.
 - **Reorganised color tokens** into four explicit scales:
   - **Brand**: `primary`, `primaryLight`, `primaryLighter`, `primaryDark`
   - **Surface**: `surfaceGround`, `surfaceBase`, `surfaceRaised`, `surfaceOverlay`

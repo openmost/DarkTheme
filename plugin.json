@@ -1,28 +1,35 @@
 {
     "name": "DarkTheme",
-    "description": "A modern dark theme for Matomo, applied to every user",
+    "description": "A modern dark theme for Matomo, applied to every user of the instance.",
+    "version": "6.0.1",
     "theme": true,
-    "version": "6.0.0",
+    "stylesheet": "stylesheets/theme.less",
     "require": {
         "php": ">=8.1.0",
         "matomo": ">=6.0.0-b1,<7.0.0-b1"
-    },
-    "stylesheet": "stylesheets\/theme.less",
-    "homepage": "https:\/\/openmost.com\/matomo\/extensions\/dark-theme",
-    "license": "GPL v3+",
-    "keywords": [
-        "Dark Theme", "Dark", "Dark Mode", "Modern", "Black"
-    ],
-    "support": {
-        "email": "ronan@openmost.com",
-        "issues": "https:\/\/github.com\/openmost\/DarkTheme\/issues",
-        "source": "https:\/\/github.com\/openmost\/DarkTheme"
     },
     "authors": [
         {
             "name": "Openmost",
             "email": "ronan@openmost.com",
-            "homepage": "https:\/\/openmost.com"
+            "homepage": "https://openmost.com"
         }
+    ],
+    "support": {
+        "email": "ronan@openmost.com",
+        "issues": "https://github.com/openmost/DarkTheme/issues",
+        "source": "https://github.com/openmost/DarkTheme"
+    },
+    "homepage": "https://openmost.com/matomo/extensions/dark-theme",
+    "preview": {
+        "video_url": "https://www.youtube-nocookie.com/embed/lwCAXxJALJw"
+    },
+    "license": "GPL v3+",
+    "keywords": [
+        "dark-theme",
+        "dark",
+        "dark-mode",
+        "modern",
+        "black"
     ]
 }

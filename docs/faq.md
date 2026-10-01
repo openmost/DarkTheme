@@ -96,11 +96,7 @@ Remember to clear Matomo's cache after any change.
 
 **Charts or maps don't look right**
 
-Clear your Matomo cache:
-1. Go to Administration > System > General Settings
-2. Click "Clear all caches"
-
-Or delete the files in the `tmp/assets/` directory.
+Clear the Matomo caches: run `./console core:clear-caches` on the server, or delete the files in the `tmp/assets/` directory.
 
 **Some elements still appear light**
 
@@ -134,4 +130,4 @@ We actively use this theme on multiple production Matomo instances and are commi
 
 **Can you create a custom theme for my company?**
 
-Yes! We offer custom theme development. Contact us at ronan@openmost.com or visit [openmost.com](https://openmost.com).
+Yes. Openmost builds [custom Matomo themes](https://openmost.com/matomo/services/custom-theme?utm_source=matomo_marketplace&utm_medium=referral&utm_campaign=services&utm_content=darktheme) in your own brand colours and fonts, on the official theme API. You can also contact us at ronan@openmost.com.

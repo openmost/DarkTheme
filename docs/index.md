@@ -106,7 +106,7 @@ You can also override the generated CSS variables from your own stylesheet:
 }
 ```
 
-After changing any value, clear Matomo's asset cache (Administration > System > General Settings > "Clear all caches").
+After changing any value, clear Matomo's caches (`./console core:clear-caches`, or empty `tmp/assets/`).
 
 ### Component Overrides
 

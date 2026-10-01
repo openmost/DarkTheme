@@ -1,0 +1,13 @@
+{
+    "OpenmostCommunication": {
+        "Dismiss": "閉じる",
+        "WidgetName": "Openmost: AI チャットボットトラッキングの設定",
+        "AIChatbotsTitle": "AI チャットボットトラッキングの設定でお困りですか？",
+        "AIChatbotsBody": "Matomo 公式 Implementation Partner の Openmost が、Matomo On-Premise でも Cloud でも、AI チャットボットトラッキングを代わりに設定します。",
+        "AIChatbotsCta": "設定を依頼する",
+        "TrackingPlanTitle": "イベントは手動で設定する必要があります",
+        "TrackingPlanBody": "イベントを計測すると、クリック、ダウンロード、フォーム送信、動画再生などを把握できます（トラッキングの設定が必要です）。Matomo 公式 Implementation Partner の Openmost が、サイトに合ったトラッキングプランを設計・実装します。",
+        "TrackingPlanCta": "トラッキングプランを作成する",
+        "EventsEnhancedLink": "Events Enhanced でイベントをさらに活用する"
+    }
+}
