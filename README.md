@@ -1,8 +1,10 @@
 # Dark Theme
 
+## Description
+
 A modern dark theme for Matomo, applied to every user of the instance.
 
-## Features
+### Features
 
 - **Dark for every user**: every theme color gets a single dark value, so the whole team gets the same dark interface whatever light or dark mode each user picked.
 - **Complete coverage**: every screen, widget, modal and component is styled, including the scrollbars.
@@ -11,12 +13,12 @@ A modern dark theme for Matomo, applied to every user of the instance.
 - **Plugin support**: Tag Manager, Funnels, Custom Reports, All Websites dashboard, Scheduled Reports, Transitions, AI chat plugins (ChatGPT, MistralAI) and more.
 - **Purely visual**: no change to tracking, data or reports.
 
-## Requirements
+### Requirements
 
 - Matomo 5.10.0 or later, up to Matomo 6 excluded (`>=5.10.0,<6.0.0-b1`)
 - For Matomo 5.0 to 5.9, install Dark Theme 5.2.x. On Matomo 6, install Dark Theme 6.x.
 
-## Installation / Configuration
+### Installation / Configuration
 
 1. Go to *Administration > Platform > Marketplace*, filter by **Themes** and search for "Dark Theme".
 2. Click **Install**, then **Activate**. The theme applies to every user immediately.
@@ -26,7 +28,7 @@ There are no settings. To go back to the default look, activate the default Mato
 
 To adjust the palette, fork the plugin and edit the brand, surface, text and border scales in `DarkTheme.php`, or override the generated `--theme-color-*` CSS variables from your own plugin. See [docs/index.md](docs/index.md).
 
-## Need help with Matomo?
+### Need help with Matomo?
 
 Openmost is an official Matomo Implementation Partner. We also build [custom Matomo themes](https://openmost.com/matomo/services/custom-theme?utm_source=matomo_marketplace&utm_medium=referral&utm_campaign=services&utm_content=darktheme) in your own brand colours and fonts, on the official theme API, in light and dark mode.
 
