@@ -10,7 +10,6 @@
 namespace Piwik\Plugins\DarkTheme;
 
 use Piwik\API\Request;
-use Piwik\Common;
 use Piwik\DataTable;
 use Piwik\Piwik;
 use Piwik\Plugin;
@@ -213,7 +212,7 @@ class OpenmostCommunication
     public static function afterEventsReport(string &$out, string $pluginName): void
     {
         // Dashboard widgets stay free of it, like the tips Matomo shows there
-        if (Common::getRequestVar('widget', 0, 'int')) {
+        if (self::getRequestInteger('widget', 0)) {
             return;
         }
 
@@ -268,7 +267,7 @@ class OpenmostCommunication
 
     public static function renderWidget(string $pluginName): string
     {
-        $placement = Common::getRequestVar('placement', '', 'string');
+        $placement = self::getRequestString('placement', '');
         if (!isset(self::PAGE_PLACEMENTS[$placement])) {
             return '';
         }
@@ -278,6 +277,21 @@ class OpenmostCommunication
         }
 
         return self::render($placement, $pluginName);
+    }
+
+    private static function getRequestInteger(string $name, int $default): int
+    {
+        return \Piwik\Request::fromRequest()->getIntegerParameter($name, $default);
+    }
+
+    /**
+     * An empty parameter (`period=`) is treated as missing and gets the default.
+     */
+    private static function getRequestString(string $name, string $default): string
+    {
+        $value = \Piwik\Request::fromRequest()->getStringParameter($name, $default);
+
+        return $value === '' ? $default : $value;
     }
 
     /**
@@ -290,7 +304,7 @@ class OpenmostCommunication
             return false;
         }
 
-        $idSite = Common::getRequestVar('idSite', 0, 'int');
+        $idSite = self::getRequestInteger('idSite', 0);
         if ($idSite <= 0) {
             return false;
         }
@@ -298,8 +312,8 @@ class OpenmostCommunication
         try {
             $categories = Request::processRequest('Events.getCategory', [
                 'idSite' => $idSite,
-                'period' => Common::getRequestVar('period', 'day', 'string'),
-                'date' => Common::getRequestVar('date', 'yesterday', 'string'),
+                'period' => self::getRequestString('period', 'day'),
+                'date' => self::getRequestString('date', 'yesterday'),
                 'segment' => '',
                 'flat' => 0,
                 'filter_limit' => -1,
@@ -366,9 +380,9 @@ class OpenmostCommunication
             $url = 'index.php?' . http_build_query([
                 'module' => 'Marketplace',
                 'action' => 'overview',
-                'idSite' => Common::getRequestVar('idSite', 1, 'int'),
-                'period' => Common::getRequestVar('period', 'day', 'string'),
-                'date' => Common::getRequestVar('date', 'yesterday', 'string'),
+                'idSite' => self::getRequestInteger('idSite', 1),
+                'period' => self::getRequestString('period', 'day'),
+                'date' => self::getRequestString('date', 'yesterday'),
             ]) . '#?' . http_build_query(['showPlugin' => $campaign['marketplacePlugin']]);
             $target = '';
         } else {
