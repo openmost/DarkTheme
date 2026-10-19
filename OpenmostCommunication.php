@@ -14,6 +14,7 @@ use Piwik\DataTable;
 use Piwik\Piwik;
 use Piwik\Plugin;
 use Piwik\Plugins\LanguagesManager\LanguagesManager;
+use Piwik\Site;
 use Piwik\Widget\WidgetConfig;
 use Piwik\Widget\WidgetsList;
 
@@ -47,6 +48,12 @@ class OpenmostCommunication
      */
     public const PLACEMENT_EVENTS_REPORT_FOOTER = 'events_report_footer';
 
+    /**
+     * Ecommerce > Overview page, rendered as a page widget above the ecommerce reports, only for a website with
+     * ecommerce enabled: the widget is not even added otherwise, so it never creates an Ecommerce menu entry.
+     */
+    public const PLACEMENT_ECOMMERCE_OVERVIEW = 'ecommerce_overview';
+
     /** Action of the Widgets\OpenmostCommunication class every Openmost plugin ships */
     public const WIDGET_ACTION = 'openmostCommunication';
 
@@ -71,7 +78,17 @@ class OpenmostCommunication
             'order' => 0,
             'middleware' => null,
         ],
+        self::PLACEMENT_ECOMMERCE_OVERVIEW => [
+            'category' => 'Goals_Ecommerce',
+            'subcategories' => ['General_Overview'],
+            'order' => 0,
+            'middleware' => null,
+            'ecommerceOnly' => true,
+        ],
     ];
+
+    /** Dismissing a banner hides it for this long in the browser, in milliseconds (30 days) */
+    private const DISMISS_DURATION_MS = 2592000000;
 
     /** Event categories sent by the Matomo media and JavaScript error trackers without any tracking plan */
     private const DEFAULT_EVENT_CATEGORIES = ['MediaVideo', 'MediaAudio', 'JavaScript Errors'];
@@ -163,6 +180,16 @@ class OpenmostCommunication
             'marketplacePlugin' => 'EventsEnhanced',
             'hiddenWhenActivated' => ['EventsEnhanced', 'EventsEnhancedPremium'],
         ],
+        // A banner can open a Marketplace plugin page too. Installed, even deactivated, means the user already
+        // knows the plugin, announcing it as new would only be noise.
+        'ecommerce_enhanced' => [
+            'placement' => self::PLACEMENT_ECOMMERCE_OVERVIEW,
+            'title' => 'OpenmostCommunication_EcommerceEnhancedTitle',
+            'body' => 'OpenmostCommunication_EcommerceEnhancedBody',
+            'cta' => 'OpenmostCommunication_EcommerceEnhancedCta',
+            'marketplacePlugin' => 'EcommerceEnhanced',
+            'hiddenWhenInstalled' => ['EcommerceEnhanced'],
+        ],
     ];
 
     private const REQUEST_CLAIMS = 'openmostCommunicationPlacements';
@@ -232,8 +259,10 @@ class OpenmostCommunication
             }
         }
 
+        $idSite = self::getRequestInteger('idSite', 0);
         foreach (self::PAGE_PLACEMENTS as $placement => $page) {
-            if (!self::findCampaign($placement)) {
+            $campaign = self::findCampaign($placement);
+            if ($campaign === null || !self::isCampaignShown($campaign['id'], $idSite)) {
                 continue;
             }
 
@@ -355,11 +384,8 @@ class OpenmostCommunication
             return '';
         }
 
-        $pluginManager = Plugin\Manager::getInstance();
-        foreach ($campaign['hiddenWhenActivated'] ?? [] as $activatedPlugin) {
-            if ($pluginManager->isPluginActivated($activatedPlugin)) {
-                return '';
-            }
+        if (!self::isCampaignShown($campaign['id'], self::getRequestInteger('idSite', 0))) {
+            return '';
         }
         $GLOBALS[self::REQUEST_CLAIMS][$placement] = true;
 
@@ -371,28 +397,98 @@ class OpenmostCommunication
     }
 
     /**
+     * False when a plugin that hides the campaign is activated (hiddenWhenActivated) or installed, activated or
+     * not (hiddenWhenInstalled), or when its placement needs a website with ecommerce enabled and this one is not.
+     *
+     * @param callable|null $isPluginActivated Returns whether a plugin is activated, from the plugin manager by default
+     * @param callable|null $isPluginInstalled Returns whether a plugin is installed, from the plugin manager by default
+     * @param callable|null $isEcommerceSite Returns whether a website has ecommerce enabled, from its settings by default
+     */
+    public static function isCampaignShown(
+        string $id,
+        int $idSite,
+        ?callable $isPluginActivated = null,
+        ?callable $isPluginInstalled = null,
+        ?callable $isEcommerceSite = null
+    ): bool {
+        $campaign = self::CAMPAIGNS[$id] ?? null;
+        if ($campaign === null) {
+            return false;
+        }
+
+        $isPluginActivated = $isPluginActivated ?: function (string $plugin): bool {
+            return Plugin\Manager::getInstance()->isPluginActivated($plugin);
+        };
+        foreach ($campaign['hiddenWhenActivated'] ?? [] as $plugin) {
+            if ($isPluginActivated($plugin)) {
+                return false;
+            }
+        }
+
+        $isPluginInstalled = $isPluginInstalled ?: function (string $plugin): bool {
+            return Plugin\Manager::getInstance()->isPluginInstalled($plugin);
+        };
+        foreach ($campaign['hiddenWhenInstalled'] ?? [] as $plugin) {
+            if ($isPluginInstalled($plugin)) {
+                return false;
+            }
+        }
+
+        if (!empty(self::PAGE_PLACEMENTS[$campaign['placement']]['ecommerceOnly'])) {
+            if ($idSite <= 0) {
+                return false;
+            }
+            $isEcommerceSite = $isEcommerceSite ?: function (int $idSite): bool {
+                return (bool) Site::isEcommerceEnabledFor($idSite);
+            };
+            try {
+                return (bool) $isEcommerceSite($idSite);
+            } catch (\Exception $e) {
+                // An unknown website, or one the user may not view, gets no banner
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
      * A plain link in the Matomo link style, to a plugin page of the Marketplace of this instance.
      */
     private static function renderLink(array $campaign): string
     {
-        // Super users can install from the Marketplace of the instance, other users get the public plugin page
-        if (Piwik::hasUserSuperUserAccess()) {
-            $url = 'index.php?' . http_build_query([
+        $url = self::marketplaceUrl($campaign['marketplacePlugin']);
+        $target = self::isExternalUrl($url) ? ' target="_blank" rel="noopener"' : '';
+
+        return '<p class="openmostCommunicationLink" style="margin:1em 0 0;text-align:center">'
+            . '<a href="' . self::escape($url) . '"' . $target . '>' . self::escape(Piwik::translate($campaign['text'])) . '</a>'
+            . '</p>';
+    }
+
+    /**
+     * Page of a plugin: super users can install it from the Marketplace of the instance, other users get the
+     * public plugin page.
+     *
+     * @param bool|null $isSuperUser Whether the user is a super user, the current user by default
+     */
+    public static function marketplaceUrl(string $plugin, ?bool $isSuperUser = null): string
+    {
+        if ($isSuperUser ?? Piwik::hasUserSuperUserAccess()) {
+            return 'index.php?' . http_build_query([
                 'module' => 'Marketplace',
                 'action' => 'overview',
                 'idSite' => self::getRequestInteger('idSite', 1),
                 'period' => self::getRequestString('period', 'day'),
                 'date' => self::getRequestString('date', 'yesterday'),
-            ]) . '#?' . http_build_query(['showPlugin' => $campaign['marketplacePlugin']]);
-            $target = '';
-        } else {
-            $url = 'https://plugins.matomo.org/' . rawurlencode($campaign['marketplacePlugin']);
-            $target = ' target="_blank" rel="noopener"';
+            ]) . '#?' . http_build_query(['showPlugin' => $plugin]);
         }
 
-        return '<p class="openmostCommunicationLink" style="margin:1em 0 0;text-align:center">'
-            . '<a href="' . self::escape($url) . '"' . $target . '>' . self::escape(Piwik::translate($campaign['text'])) . '</a>'
-            . '</p>';
+        return 'https://plugins.matomo.org/' . rawurlencode($plugin);
+    }
+
+    private static function isExternalUrl(string $url): bool
+    {
+        return strpos($url, 'https://') === 0;
     }
 
     private static function findCampaign(string $placement): ?array
@@ -408,7 +504,10 @@ class OpenmostCommunication
 
     private static function renderBanner(string $id, array $campaign, string $pluginName): string
     {
-        $url = self::campaignUrl($id, $pluginName);
+        $url = isset($campaign['marketplacePlugin'])
+            ? self::marketplaceUrl($campaign['marketplacePlugin'])
+            : self::campaignUrl($id, $pluginName);
+        $target = self::isExternalUrl($url) ? ' target="_blank" rel="noopener"' : '';
         $domId = 'openmostCommunication_' . $id;
         $title = self::escape(Piwik::translate($campaign['title']));
         $dismiss = self::escape(Piwik::translate('OpenmostCommunication_Dismiss'));
@@ -420,15 +519,19 @@ class OpenmostCommunication
             . '<div class="openmostCommunicationBanner__brand">' . self::LOGO . '</div>'
             . '<p class="openmostCommunicationBanner__title">' . $title . '</p>'
             . '<p class="openmostCommunicationBanner__body">' . self::escape(Piwik::translate($campaign['body'])) . '</p>'
-            . '<a class="openmostCommunicationBanner__cta" href="' . self::escape($url) . '" target="_blank" rel="noopener">'
+            . '<a class="openmostCommunicationBanner__cta" href="' . self::escape($url) . '"' . $target . '>'
             . '<span>' . self::escape(Piwik::translate($campaign['cta'])) . '</span>' . self::ARROW
             . '</a>'
             . '<button type="button" class="openmostCommunicationBanner__dismiss" aria-label="' . $dismiss . '" title="' . $dismiss . '">' . self::CLOSE . '</button>'
             . '</section>'
-            // Hides the banner before paint once dismissed, the choice is kept per browser and per campaign
+            // Hides the banner before paint for 30 days once dismissed, per browser and per campaign. The value is
+            // the dismissal time; an older "1" (dismissed forever) or anything not a past timestamp restarts the
+            // 30 days now, so a banner dismissed before this rule does not pop back at once.
             . '<script>(function(){var k="openmostCommunication:' . $id . ':dismissed",b=document.getElementById("' . $domId . '");'
-            . 'if(!b)return;try{if(localStorage.getItem(k)){b.remove();return}}catch(e){}'
-            . 'b.querySelector(".openmostCommunicationBanner__dismiss").addEventListener("click",function(){try{localStorage.setItem(k,"1")}catch(e){}b.remove()})})();</script>';
+            . 'if(!b)return;try{var v=localStorage.getItem(k),n=+new Date,t=+v;'
+            . 'if(v){if(!(t>1e12&&t<=n)){t=n;localStorage.setItem(k,String(n))}'
+            . 'if(n-t<' . self::DISMISS_DURATION_MS . '){b.remove();return}localStorage.removeItem(k)}}catch(e){}'
+            . 'b.querySelector(".openmostCommunicationBanner__dismiss").addEventListener("click",function(){try{localStorage.setItem(k,String(+new Date))}catch(e){}b.remove()})})();</script>';
     }
 
     /**

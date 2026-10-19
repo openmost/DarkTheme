@@ -4,13 +4,16 @@
         "Matomo6Title": "O Matomo 6 chegou",
         "Matomo6Body": "A Openmost é Implementation Partner oficial da Matomo e trabalha com o Matomo desde 2016. Atualizar agora é mais simples do que recuperar o atraso daqui a alguns meses: as novidades e as melhorias de segurança chegam primeiro ao Matomo 6, e levamos a sua instância até lá com os relatórios e o seguimento intactos.",
         "Matomo6Cta": "Planear a minha atualização para o Matomo 6",
-        "WidgetName": "Openmost: configuração do seguimento de chatbots de IA",
+        "WidgetName": "Openmost: dicas e novidades",
         "AIChatbotsTitle": "Precisa de ajuda para configurar o seguimento de chatbots de IA?",
         "AIChatbotsBody": "Como Implementation Partner oficial da Matomo, a Openmost pode configurar o seguimento de chatbots de IA por si, no Matomo On-Premise ou Cloud.",
         "AIChatbotsCta": "Pedir a configuração",
         "TrackingPlanTitle": "Os eventos têm de ser configurados manualmente",
         "TrackingPlanBody": "Os eventos medem cliques, transferências, envios de formulários ou reproduções de vídeo, desde que sejam seguidos. Como Implementation Partner oficial da Matomo, a Openmost concebe e implementa um plano de marcação adaptado ao seu site.",
         "TrackingPlanCta": "Criar o meu plano de marcação",
-        "EventsEnhancedLink": "Tire mais partido dos seus eventos com o Events Enhanced"
+        "EventsEnhancedLink": "Tire mais partido dos seus eventos com o Events Enhanced",
+        "EcommerceEnhancedTitle": "Novidade: Ecommerce Enhanced para o Matomo",
+        "EcommerceEnhancedBody": "O Ecommerce Enhanced alarga consideravelmente as funcionalidades de comércio eletrónico do Matomo, com novos relatórios sobre produtos, marcas, promoções, cupões, funis de checkout e compradores. Integra-se facilmente na sua loja online, sem desenvolvimento específico. Plugin gratuito da Openmost.",
+        "EcommerceEnhancedCta": "Descobrir o Ecommerce Enhanced"
     }
 }
