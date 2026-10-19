@@ -1,13 +1,16 @@
 {
     "OpenmostCommunication": {
         "Dismiss": "Ausblenden",
-        "WidgetName": "Openmost: Einrichtung des KI-Chatbot-Trackings",
+        "WidgetName": "Openmost: Tipps und Neuigkeiten",
         "AIChatbotsTitle": "Brauchen Sie Hilfe beim Einrichten des KI-Chatbot-Trackings?",
         "AIChatbotsBody": "Als offizieller Matomo Implementation Partner richtet Openmost das KI-Chatbot-Tracking für Sie ein, auf Matomo On-Premise oder Cloud.",
         "AIChatbotsCta": "Tracking einrichten lassen",
         "TrackingPlanTitle": "Ereignisse müssen manuell eingerichtet werden",
         "TrackingPlanBody": "Ereignisse messen Klicks, Downloads, Formularübermittlungen oder Videowiedergaben, sobald sie erfasst werden. Als offizieller Matomo Implementation Partner konzipiert und setzt Openmost einen Tracking-Plan um, der zu Ihrer Website passt.",
         "TrackingPlanCta": "Meinen Tracking-Plan erstellen",
-        "EventsEnhancedLink": "Holen Sie mit Events Enhanced mehr aus Ihren Ereignissen heraus"
+        "EventsEnhancedLink": "Holen Sie mit Events Enhanced mehr aus Ihren Ereignissen heraus",
+        "EcommerceEnhancedTitle": "Neu: Ecommerce Enhanced für Matomo",
+        "EcommerceEnhancedBody": "Ecommerce Enhanced erweitert die E-Commerce-Funktionen von Matomo erheblich, mit neuen Berichten zu Produkten, Marken, Aktionen, Gutscheinen, Checkout-Funnels und Käufern. Es lässt sich ganz einfach in Ihren Onlineshop einbinden, ohne spezielle Entwicklung. Kostenloses Plugin von Openmost.",
+        "EcommerceEnhancedCta": "Ecommerce Enhanced entdecken"
     }
 }

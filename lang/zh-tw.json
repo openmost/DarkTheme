@@ -1,13 +1,16 @@
 {
     "OpenmostCommunication": {
         "Dismiss": "關閉",
-        "WidgetName": "Openmost：AI 聊天機器人追蹤設定",
+        "WidgetName": "Openmost：技巧與消息",
         "AIChatbotsTitle": "需要協助設定 AI 聊天機器人追蹤嗎？",
         "AIChatbotsBody": "作為 Matomo 官方 Implementation Partner，Openmost 可以替你設定 AI 聊天機器人追蹤，適用於 Matomo On-Premise 或 Cloud。",
         "AIChatbotsCta": "請人幫我設定",
         "TrackingPlanTitle": "事件需要手動設定",
         "TrackingPlanBody": "事件可以衡量點擊、下載、表單送出或影片播放，前提是已完成追蹤設定。作為 Matomo 官方 Implementation Partner，Openmost 為你的網站設計並實作合適的追蹤計畫。",
         "TrackingPlanCta": "建立我的追蹤計畫",
-        "EventsEnhancedLink": "使用 Events Enhanced 充分運用你的事件資料"
+        "EventsEnhancedLink": "使用 Events Enhanced 充分運用你的事件資料",
+        "EcommerceEnhancedTitle": "全新推出：適用於 Matomo 的 Ecommerce Enhanced",
+        "EcommerceEnhancedBody": "Ecommerce Enhanced 大幅擴充 Matomo 的電子商務功能，新增商品、品牌、促銷活動、優惠券、結帳漏斗與買家等報表。無需特別開發，即可輕鬆整合至你的網路商店。由 Openmost 提供的免費外掛程式。",
+        "EcommerceEnhancedCta": "認識 Ecommerce Enhanced"
     }
 }

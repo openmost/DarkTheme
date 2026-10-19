@@ -1,13 +1,16 @@
 {
     "OpenmostCommunication": {
         "Dismiss": "Sluiten",
-        "WidgetName": "Openmost: instellen van AI-chatbottracking",
+        "WidgetName": "Openmost: tips en nieuws",
         "AIChatbotsTitle": "Hulp nodig bij het instellen van AI-chatbottracking?",
         "AIChatbotsBody": "Als officieel Matomo Implementation Partner kan Openmost AI-chatbottracking voor u instellen, op Matomo On-Premise of Cloud.",
         "AIChatbotsCta": "Laat het voor mij instellen",
         "TrackingPlanTitle": "Gebeurtenissen moeten handmatig worden ingesteld",
         "TrackingPlanBody": "Gebeurtenissen meten klikken, downloads, formulierverzendingen of videoweergaven, zodra ze worden gemeten. Als officieel Matomo Implementation Partner ontwerpt en implementeert Openmost een trackingplan dat bij uw site past.",
         "TrackingPlanCta": "Mijn trackingplan opstellen",
-        "EventsEnhancedLink": "Haal meer uit uw gebeurtenissen met Events Enhanced"
+        "EventsEnhancedLink": "Haal meer uit uw gebeurtenissen met Events Enhanced",
+        "EcommerceEnhancedTitle": "Nieuw: Ecommerce Enhanced voor Matomo",
+        "EcommerceEnhancedBody": "Ecommerce Enhanced breidt de ecommercefuncties van Matomo flink uit, met nieuwe rapporten over producten, merken, promoties, kortingscodes, checkout-funnels en kopers. Het past eenvoudig in uw webwinkel, zonder specifieke ontwikkeling. Gratis plugin van Openmost.",
+        "EcommerceEnhancedCta": "Ontdek Ecommerce Enhanced"
     }
 }

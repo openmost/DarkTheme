@@ -1,13 +1,16 @@
 {
     "OpenmostCommunication": {
         "Dismiss": "تجاهل",
-        "WidgetName": "Openmost: إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي",
+        "WidgetName": "Openmost: نصائح وأخبار",
         "AIChatbotsTitle": "هل تحتاج إلى مساعدة في إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي؟",
         "AIChatbotsBody": "بصفتها شريك تنفيذ رسمياً لـ Matomo (Implementation Partner)، يمكن لـ Openmost إعداد تتبع روبوتات الدردشة بالذكاء الاصطناعي نيابةً عنك، على Matomo On-Premise أو Cloud.",
         "AIChatbotsCta": "اطلب إعداده لي",
         "TrackingPlanTitle": "يجب إعداد الأحداث يدوياً",
         "TrackingPlanBody": "تقيس الأحداث النقرات والتنزيلات وإرسال النماذج وتشغيل الفيديو، بشرط أن يتم تتبعها. بصفتها شريك تنفيذ رسمياً لـ Matomo (Implementation Partner)، تصمم Openmost خطة تتبع مناسبة لموقعك وتنفذها.",
         "TrackingPlanCta": "أنشئ خطة التتبع الخاصة بي",
-        "EventsEnhancedLink": "استفد أكثر من أحداثك مع Events Enhanced"
+        "EventsEnhancedLink": "استفد أكثر من أحداثك مع Events Enhanced",
+        "EcommerceEnhancedTitle": "جديد: Ecommerce Enhanced لـ Matomo",
+        "EcommerceEnhancedBody": "يوسّع Ecommerce Enhanced ميزات التجارة الإلكترونية في Matomo إلى حد كبير، مع تقارير جديدة عن المنتجات والعلامات التجارية والعروض الترويجية والقسائم ومسارات إتمام الشراء والمشترين. يندمج بسهولة في متجرك الإلكتروني دون أي تطوير خاص. إضافة مجانية من Openmost.",
+        "EcommerceEnhancedCta": "اكتشف Ecommerce Enhanced"
     }
 }

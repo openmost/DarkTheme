@@ -1,13 +1,16 @@
 {
     "OpenmostCommunication": {
         "Dismiss": "Masquer",
-        "WidgetName": "Openmost : configuration du suivi des chatbots IA",
+        "WidgetName": "Openmost : conseils et nouveautés",
         "AIChatbotsTitle": "Besoin d'aide pour configurer le suivi des chatbots IA ?",
         "AIChatbotsBody": "Implementation Partner officiel de Matomo, Openmost peut configurer le suivi des chatbots IA pour vous, sur Matomo On-Premise ou Cloud.",
         "AIChatbotsCta": "Faire configurer le suivi",
         "TrackingPlanTitle": "Les événements doivent être configurés manuellement",
         "TrackingPlanBody": "Les événements mesurent les clics, téléchargements, envois de formulaires ou lectures vidéo, à condition d'être suivis. Implementation Partner officiel de Matomo, Openmost conçoit et met en place un plan de marquage adapté à votre site.",
         "TrackingPlanCta": "Construire mon plan de marquage",
-        "EventsEnhancedLink": "Tirez davantage de vos événements avec Events Enhanced"
+        "EventsEnhancedLink": "Tirez davantage de vos événements avec Events Enhanced",
+        "EcommerceEnhancedTitle": "Nouveau : Ecommerce Enhanced pour Matomo",
+        "EcommerceEnhancedBody": "Ecommerce Enhanced étend largement les fonctionnalités ecommerce de Matomo : nouveaux rapports sur les produits, marques, promotions, coupons, funnels de checkout et acheteurs. Il s'adapte facilement à votre boutique en ligne, sans développement spécifique. Plugin gratuit par Openmost.",
+        "EcommerceEnhancedCta": "Découvrir Ecommerce Enhanced"
     }
 }
